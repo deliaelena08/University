@@ -1,0 +1,3 @@
+Fiat | Bravo | 2007 | red
+Audi | A5 | 2007 | blue
+Fiat | Idea | 2003 | black

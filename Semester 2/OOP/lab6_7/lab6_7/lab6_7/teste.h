@@ -1,0 +1,23 @@
+#pragma once
+#include "ui.h"
+namespace {
+	void tests_domain();
+	void testrepo();
+	void testaddrepo();
+	void testdeleterepo();
+	void testfindrepo();
+	void testmodifyrepo();
+	void testAddService();
+	void testDeleteService();
+	void add_by_default_test();
+	void testModifyService();
+	void testfindService();
+	void testfiltrebyname();
+	void testfiltrebyprice();
+	void testfiltrebyproductor();
+	void testsortbyname();
+	void testsortbyprice();
+	void testsortbynameandprice();
+	void testservice();
+}
+void testall();

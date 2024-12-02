@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\tapuc\source\repos\lab6_7\lab6_7\</FILEPATH>
+      <FILENAME>domain.h</FILENAME>
+      <LINE>17</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26432</DEFECTCODE>
+    <DESCRIPTION>If you define or delete any default operation in the type 'class Product', define or delete them all (c.21).</DESCRIPTION>
+    <FUNCTION>Product::{ctor}</FUNCTION>
+    <DECORATED>??0Product@@QEAA@AEBV0@@Z</DECORATED>
+    <FUNCLINE>17</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\tapuc\source\repos\lab6_7\lab6_7\</FILEPATH>
+      <FILENAME>ui.cpp</FILENAME>
+      <LINE>202</LINE>
+      <COLUMN>5</COLUMN>
+    </SFA>
+    <DEFECTCODE>26494</DEFECTCODE>
+    <DESCRIPTION>Variable 'cmd' is uninitialized. Always initialize an object (type.5).</DESCRIPTION>
+    <FUNCTION>UI::run</FUNCTION>
+    <DECORATED>?run@UI@@QEAAXXZ</DECORATED>
+    <FUNCLINE>201</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>cmd</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\tapuc\source\repos\lab6_7\lab6_7\</FILEPATH>
+      <FILENAME>ui.cpp</FILENAME>
+      <LINE>234</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>6389</DEFECTCODE>
+    <DESCRIPTION>Move '__empty_global_delete' to anonymous namespace or put a forward declaration in a common header included in this file.</DESCRIPTION>
+    <FUNCTION>__empty_global_delete</FUNCTION>
+    <DECORATED>?__empty_global_delete@@YAXPEAX@Z</DECORATED>
+    <FUNCLINE>234</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\tapuc\source\repos\lab6_7\lab6_7\</FILEPATH>
+      <FILENAME>ui.cpp</FILENAME>
+      <LINE>234</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>6389</DEFECTCODE>
+    <DESCRIPTION>Move '__empty_global_delete' to anonymous namespace or put a forward declaration in a common header included in this file.</DESCRIPTION>
+    <FUNCTION>__empty_global_delete</FUNCTION>
+    <DECORATED>?__empty_global_delete@@YAXPEAX_K@Z</DECORATED>
+    <FUNCLINE>234</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\tapuc\source\repos\lab6_7\lab6_7\</FILEPATH>
+      <FILENAME>DynamicVector.cpp</FILENAME>
+      <LINE>15</LINE>
+      <COLUMN>24</COLUMN>
+    </SFA>
+    <DEFECTCODE>26432</DEFECTCODE>
+    <DESCRIPTION>If you define or delete any default operation in the type 'class DynamicVector&lt;class Product&gt;', define or delete them all (c.21).</DESCRIPTION>
+    <FUNCTION>DynamicVector&lt;Product&gt;::{ctor}</FUNCTION>
+    <DECORATED>??0?$DynamicVector@VProduct@@@@QEAA@AEBV0@@Z</DECORATED>
+    <FUNCLINE>15</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\tapuc\source\repos\lab6_7\lab6_7\</FILEPATH>
+      <FILENAME>DynamicVector.cpp</FILENAME>
+      <LINE>18</LINE>
+      <COLUMN>15</COLUMN>
+    </SFA>
+    <DEFECTCODE>26409</DEFECTCODE>
+    <DESCRIPTION>Avoid calling new and delete explicitly, use std::make_unique&lt;T&gt; instead (r.11).</DESCRIPTION>
+    <FUNCTION>DynamicVector&lt;Product&gt;::{ctor}</FUNCTION>
+    <DECORATED>??0?$DynamicVector@VProduct@@@@QEAA@AEBV0@@Z</DECORATED>
+    <FUNCLINE>15</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\tapuc\source\repos\lab6_7\lab6_7\</FILEPATH>
+      <FILENAME>DynamicVector.cpp</FILENAME>
+      <LINE>89</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26481</DEFECTCODE>
+    <DESCRIPTION>Don't use pointer arithmetic. Use span instead (bounds.1).</DESCRIPTION>
+    <FUNCTION>DynamicVector&lt;Product&gt;::[]</FUNCTION>
+    <DECORATED>??A?$DynamicVector@VProduct@@@@QEAAAEAVProduct@@H@Z</DECORATED>
+    <FUNCLINE>85</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

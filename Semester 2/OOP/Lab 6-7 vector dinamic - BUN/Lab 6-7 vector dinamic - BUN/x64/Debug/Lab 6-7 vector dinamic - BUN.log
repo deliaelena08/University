@@ -1,0 +1,27 @@
+﻿  Repository.cpp
+  Service.cpp
+C:\Users\dell\Desktop\Facultate anul 1\Semestrul 2\Programare orientata pe obiecte\Laborator\Lab 6-7\Lab 6-7 vector dinamic - BUN\Lab 6-7 vector dinamic - BUN\VectorDinamic.h(114,12): warning C4244: 'initializing': conversion from '__int64' to 'int', possible loss of data
+  (compiling source file 'Repository.cpp')
+  C:\Users\dell\Desktop\Facultate anul 1\Semestrul 2\Programare orientata pe obiecte\Laborator\Lab 6-7\Lab 6-7 vector dinamic - BUN\Lab 6-7 vector dinamic - BUN\VectorDinamic.h(114,12):
+  the template instantiation context (the oldest one first) is
+  	C:\Users\dell\Desktop\Facultate anul 1\Semestrul 2\Programare orientata pe obiecte\Laborator\Lab 6-7\Lab 6-7 vector dinamic - BUN\Lab 6-7 vector dinamic - BUN\Repository.h(18,17):
+  	see reference to class template instantiation 'MyVector<Book>' being compiled
+  	C:\Users\dell\Desktop\Facultate anul 1\Semestrul 2\Programare orientata pe obiecte\Laborator\Lab 6-7\Lab 6-7 vector dinamic - BUN\Lab 6-7 vector dinamic - BUN\VectorDinamic.h(111,46):
+  	while compiling class template member function 'void MyVector<Book>::erase(TElem *)'
+          with
+          [
+              TElem=Book
+          ]
+  		C:\Users\dell\Desktop\Facultate anul 1\Semestrul 2\Programare orientata pe obiecte\Laborator\Lab 6-7\Lab 6-7 vector dinamic - BUN\Lab 6-7 vector dinamic - BUN\Repository.cpp(55,17):
+  		see the first reference to 'MyVector<Book>::erase' in 'BookRepository::delete_book'
+  
+C:\Users\dell\Desktop\Facultate anul 1\Semestrul 2\Programare orientata pe obiecte\Laborator\Lab 6-7\Lab 6-7 vector dinamic - BUN\Lab 6-7 vector dinamic - BUN\Service.cpp(42,17): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\dell\Desktop\Facultate anul 1\Semestrul 2\Programare orientata pe obiecte\Laborator\Lab 6-7\Lab 6-7 vector dinamic - BUN\Lab 6-7 vector dinamic - BUN\Service.cpp(43,38): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\dell\Desktop\Facultate anul 1\Semestrul 2\Programare orientata pe obiecte\Laborator\Lab 6-7\Lab 6-7 vector dinamic - BUN\Lab 6-7 vector dinamic - BUN\Service.cpp(56,17): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\dell\Desktop\Facultate anul 1\Semestrul 2\Programare orientata pe obiecte\Laborator\Lab 6-7\Lab 6-7 vector dinamic - BUN\Lab 6-7 vector dinamic - BUN\Service.cpp(57,38): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  UI.cpp
+  VectorDinamic.cpp
+  main.cpp
+  Generating Code...
+C:\Users\dell\Desktop\Facultate anul 1\Semestrul 2\Programare orientata pe obiecte\Laborator\Lab 6-7\Lab 6-7 vector dinamic - BUN\Lab 6-7 vector dinamic - BUN\Service.cpp(89,1): warning C4715: '`BookService::sort_books'::`2'::<lambda_1>::operator()': not all control paths return a value
+  Lab 6-7 vector dinamic - BUN.vcxproj -> C:\Users\dell\Desktop\Facultate anul 1\Semestrul 2\Programare orientata pe obiecte\Laborator\Lab 6-7\Lab 6-7 vector dinamic - BUN\x64\Debug\Lab 6-7 vector dinamic - BUN.exe

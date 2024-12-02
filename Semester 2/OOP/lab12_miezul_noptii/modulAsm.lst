@@ -1,0 +1,60 @@
+     1                                  bits 32 ; assembling for the 32 bits architecture
+     2                                  
+     3                                  ; declare the EntryPoint (a label defining the very first instruction of the program)
+     4                                  
+     5                                  global _cuvantasmWord
+     6                                  
+     7                                  ; our data is declared here (the variables needed by our program)
+     8                                  segment data public data use32
+     9 00000000 00<rept>                    cuvant times 101 db 0
+    10 00000065 0300000000000000            testi dd 3,0
+    11 0000006D 746573742E00                testprop db 'test.',0
+    12                                  ; our code starts here
+    13                                  segment code public use32
+    14                                      _cuvantasmWord:
+    15                                              ; creare cadru de stiva pentru programul apelat
+    16 00000000 55                              push ebp
+    17 00000001 89E5                            mov ebp, esp
+    18                                      
+    19 00000003 8B4D08                          mov ecx,[ebp+8]; i
+    20 00000006 8B5D0C                          mov ebx,[ebp+12];adresa sirului din care extrag cuvinte
+    21                                                 
+    22                                          repeta:
+    23 00000009 83F901                          cmp ecx,1
+    24 0000000C 7409                            jz foundword
+    25                                              
+    26                                              cautarespatiu: ;cuvintele sunt separate prin spatiu
+    27 0000000E 43                                  inc ebx
+    28 0000000F 803B20                              cmp [ebx],byte ' '
+    29 00000012 75FA                                jnz cautarespatiu
+    30                                              
+    31 00000014 49                              dec ecx
+    32 00000015 EBF2                            jmp repeta
+    33                                          
+    34                                          foundword:
+    35 00000017 FC                              cld
+    36 00000018 8B4D08                          mov ecx,[ebp+8]
+    37 0000001B 83F901                          cmp ecx,1
+    38 0000001E 7401                            jz firstiteration
+    39 00000020 43                              inc ebx;pentru ca eram la space.
+    40                                          firstiteration:
+    41 00000021 89DE                            mov esi,ebx
+    42 00000023 BF[00000000]                    mov edi,cuvant
+    43                                          stocare:
+    44 00000028 A4                                  movsb
+    45 00000029 803E20                              cmp [esi],byte ' '
+    46 0000002C 7407                                jz final
+    47 0000002E 803E2E                              cmp [esi],byte '.'
+    48 00000031 7402                                jz final
+    49 00000033 EBF3                                jmp stocare
+    50                                          ; exit(0)
+    51                                          final:
+    52                                          
+    53 00000035 C60700                          mov [edi], byte 0
+    54                                          
+    55 00000038 89EC                            mov esp, ebp
+    56 0000003A 5D                              pop ebp
+    57                                          
+    58 0000003B B8[00000000]                    mov eax,cuvant;intoarcem adresa sirului rezultat
+    59                                          
+    60 00000040 C3                              ret

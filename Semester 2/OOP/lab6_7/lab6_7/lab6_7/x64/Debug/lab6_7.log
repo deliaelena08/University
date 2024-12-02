@@ -1,0 +1,46 @@
+﻿  repository.cpp
+  service.cpp
+  ui.cpp
+  Running Code Analysis for C/C++...
+  Generating Code...
+  lab6_7.vcxproj -> C:\Users\tapuc\source\repos\lab6_7\x64\Debug\lab6_7.exe
+C:\Users\tapuc\source\repos\lab6_7\lab6_7\domain.h(17): warning C26432: If you define or delete any default operation in the type 'class Product', define or delete them all (c.21).
+C:\Users\tapuc\source\repos\lab6_7\lab6_7\domain.cpp(34): warning C6389: Move '__empty_global_delete' to anonymous namespace or put a forward declaration in a common header included in this file.
+C:\Users\tapuc\source\repos\lab6_7\lab6_7\DynamicVector.cpp(111): warning C6389: Move '__empty_global_delete' to anonymous namespace or put a forward declaration in a common header included in this file.
+C:\Users\tapuc\source\repos\lab6_7\lab6_7\main.cpp(9): warning C6389: Move 'startApp' to anonymous namespace or put a forward declaration in a common header included in this file.
+C:\Users\tapuc\source\repos\lab6_7\lab6_7\main.cpp(24): warning C6389: Move '__empty_global_delete' to anonymous namespace or put a forward declaration in a common header included in this file.
+C:\Users\tapuc\source\repos\lab6_7\lab6_7\DynamicVector.cpp(11): warning C26447: The function is declared 'noexcept' but calls function 'operator new[]()' which may throw exceptions (f.6).
+C:\Users\tapuc\source\repos\lab6_7\lab6_7\DynamicVector.cpp(11): warning C26409: Avoid calling new and delete explicitly, use std::make_unique<T> instead (r.11).
+C:\Users\tapuc\source\repos\lab6_7\lab6_7\DynamicVector.cpp(25): warning C26432: If you define or delete any default operation in the type 'class DynamicVector<class Product>', define or delete them all (c.21).
+C:\Users\tapuc\source\repos\lab6_7\lab6_7\repository.cpp(48): warning C26496: The variable 'poz' does not change after construction, mark it as const (con.4).
+C:\Users\tapuc\source\repos\lab6_7\lab6_7\repository.cpp(54): warning C26458: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+C:\Users\tapuc\source\repos\lab6_7\lab6_7\repository.cpp(61): warning C26496: The variable 'poz' does not change after construction, mark it as const (con.4).
+C:\Users\tapuc\source\repos\lab6_7\lab6_7\repository.cpp(65): warning C6389: Move '__empty_global_delete' to anonymous namespace or put a forward declaration in a common header included in this file.
+C:\Users\tapuc\source\repos\lab6_7\lab6_7\DynamicVector.cpp(89): warning C26481: Don't use pointer arithmetic. Use span instead (bounds.1).
+C:\Users\tapuc\source\repos\lab6_7\lab6_7\service.cpp(68): warning C26489: Don't dereference a pointer that may be invalid: '*result.[]'. '([]:68's result)' may have been invalidated at line 68 (lifetime.1).
+C:\Users\tapuc\source\repos\lab6_7\lab6_7\service.cpp(81): warning C26489: Don't dereference a pointer that may be invalid: '*result.[]'. '([]:81's result)' may have been invalidated at line 81 (lifetime.1).
+C:\Users\tapuc\source\repos\lab6_7\lab6_7\service.cpp(95): warning C26489: Don't dereference a pointer that may be invalid: '*result.[]'. '([]:95's result)' may have been invalidated at line 95 (lifetime.1).
+C:\Users\tapuc\source\repos\lab6_7\lab6_7\service.cpp(101): warning C6389: Move '__empty_global_delete' to anonymous namespace or put a forward declaration in a common header included in this file.
+C:\Users\tapuc\source\repos\lab6_7\lab6_7\DynamicVector.cpp(15): warning C26432: If you define or delete any default operation in the type 'class DynamicVector<class Product>', define or delete them all (c.21).
+C:\Users\tapuc\source\repos\lab6_7\lab6_7\DynamicVector.cpp(18): warning C26409: Avoid calling new and delete explicitly, use std::make_unique<T> instead (r.11).
+C:\Users\tapuc\source\repos\lab6_7\lab6_7\teste.cpp(275): warning C26458: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+C:\Users\tapuc\source\repos\lab6_7\lab6_7\teste.cpp(276): warning C26458: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+C:\Users\tapuc\source\repos\lab6_7\lab6_7\teste.cpp(291): warning C26458: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+C:\Users\tapuc\source\repos\lab6_7\lab6_7\teste.cpp(292): warning C26458: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+C:\Users\tapuc\source\repos\lab6_7\lab6_7\teste.cpp(293): warning C26458: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+C:\Users\tapuc\source\repos\lab6_7\lab6_7\teste.cpp(309): warning C26458: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+C:\Users\tapuc\source\repos\lab6_7\lab6_7\teste.cpp(310): warning C26458: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+C:\Users\tapuc\source\repos\lab6_7\lab6_7\teste.cpp(311): warning C26458: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+C:\Users\tapuc\source\repos\lab6_7\lab6_7\teste.cpp(326): warning C26458: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+C:\Users\tapuc\source\repos\lab6_7\lab6_7\teste.cpp(327): warning C26458: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+C:\Users\tapuc\source\repos\lab6_7\lab6_7\teste.cpp(345): warning C26458: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+C:\Users\tapuc\source\repos\lab6_7\lab6_7\teste.cpp(346): warning C26458: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+C:\Users\tapuc\source\repos\lab6_7\lab6_7\teste.cpp(348): warning C26458: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+C:\Users\tapuc\source\repos\lab6_7\lab6_7\teste.cpp(349): warning C26458: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+C:\Users\tapuc\source\repos\lab6_7\lab6_7\teste.cpp(367): warning C26458: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+C:\Users\tapuc\source\repos\lab6_7\lab6_7\teste.cpp(368): warning C26458: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+C:\Users\tapuc\source\repos\lab6_7\lab6_7\teste.cpp(369): warning C26458: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+C:\Users\tapuc\source\repos\lab6_7\lab6_7\teste.cpp(370): warning C26458: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+C:\Users\tapuc\source\repos\lab6_7\lab6_7\teste.cpp(393): warning C6389: Move '__empty_global_delete' to anonymous namespace or put a forward declaration in a common header included in this file.
+C:\Users\tapuc\source\repos\lab6_7\lab6_7\ui.cpp(202): warning C26494: Variable 'cmd' is uninitialized. Always initialize an object (type.5).
+C:\Users\tapuc\source\repos\lab6_7\lab6_7\ui.cpp(234): warning C6389: Move '__empty_global_delete' to anonymous namespace or put a forward declaration in a common header included in this file.

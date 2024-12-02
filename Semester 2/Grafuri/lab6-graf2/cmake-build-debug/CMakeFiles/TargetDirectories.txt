@@ -1,0 +1,3 @@
+C:/Users/tapuc/CLionProjects/lab6-graf2/cmake-build-debug/CMakeFiles/lab6_graf2.dir
+C:/Users/tapuc/CLionProjects/lab6-graf2/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/tapuc/CLionProjects/lab6-graf2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
