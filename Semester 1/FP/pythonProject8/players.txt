@@ -1,0 +1,10 @@
+1,Stephen Curry,point-guard,178
+2,Stefan Mar,shooting_guard,210
+3,Maria Morte,center,199
+4,Stepheny,point-guard,178
+5,Stefan,shooting_guard,210
+6,Mihai Precovici,shooting-guard,100
+7,MAricica Dansatoarea,point-guard,150
+8,Cristian,shooting_guard,270
+9,Catalin Prunsa,shooting-guard,200
+10,Stefan,center,155

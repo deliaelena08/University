@@ -1,0 +1,5 @@
+1,marvel,ok,actiune
+2,calugarita,dragut,horror
+3,teambuilding,bun,comedie
+5,the nun,ok,horror
+6,home alone,popular,comedy

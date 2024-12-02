@@ -1,0 +1,86 @@
+     1                                  bits 32 
+     2                                  ;Se dau un nume de fisier si un text (definite in segmentul de date). Textul contine litere mici, litere mari, cifre si caractere speciale. Sa se inlocuiasca toate caracterele speciale din textul dat cu caracterul '
+     3                                  global start        
+     4                                  extern exit,fprintf,fopen,fclose             
+     5                                  import exit msvcrt.dll    
+     6                                  import fopen msvcrt.dll
+     7                                  import fprintf msvcrt.dll 
+     8                                  import fclose msvcrt.dll
+     9                                  
+    10                                  segment data use32 class=data
+    11 00000000 7700                        mod_acces_fisier db "w",0
+    12 00000002 6669736965725F7072-         nume_fisier db "fisier_problema.txt",0
+    12 0000000B 6F626C656D612E7478-
+    12 00000014 7400               
+    13 00000016 4D4D3C6F6972353820-         text db "MM<oir58 ei3075$^:l'",0
+    13 0000001F 656933303735245E3A-
+    13 00000028 6C2700             
+    14                                      len equ $-text-1
+    15 0000002B FFFFFFFF                    descriptor_fis dd -1
+    16                                  segment code use32 class=code
+    17                                      start:
+    18 00000000 68[00000000]                    push mod_acces_fisier
+    19 00000005 68[02000000]                    push nume_fisier
+    20 0000000A FF15[00000000]                  call [fopen]; eax-adresa fisierului
+    21 00000010 A3[2B000000]                    mov [descriptor_fis], eax
+    22                                          
+    23                                          ; verificam daca functia fopen a creat cu succes fisierul (daca EAX != 0)
+    24 00000015 83F800                          cmp eax, 0
+    25 00000018 7467                            je final
+    26                                          
+    27 0000001A B914000000                      mov ecx,len;pregatim sirul
+    28 0000001F BE00000000                      mov esi,0
+    29                                          
+    30                                          repeta:
+    31 00000024 8A86[16000000]                  mov al,[text+esi]
+    32                                          
+    33 0000002A B37A                            mov bl,122
+    34 0000002C 38D8                            cmp al,bl
+    35 0000002E 7724                            ja schimbare;AL>'z'
+    36                                          
+    37 00000030 B361                            mov bl,97
+    38 00000032 38D8                            cmp al,bl
+    39 00000034 7325                            jae skip;AL>='a'
+    40                                          
+    41 00000036 B35A                            mov bl,90
+    42 00000038 38D8                            cmp al,bl
+    43 0000003A 7718                            ja schimbare;AL>'Z'
+    44                                          
+    45 0000003C B341                            mov bl,65
+    46 0000003E 38D8                            cmp al,bl
+    47 00000040 7319                            jae skip;AL>='A'
+    48                                          
+    49 00000042 B339                            mov bl,57
+    50 00000044 38D8                            cmp al,bl
+    51 00000046 770C                            ja schimbare;AL>'10'
+    52                                          
+    53 00000048 B330                            mov bl,48
+    54 0000004A 38D8                            cmp al,bl
+    55 0000004C 730D                            jae skip;AL>='0'
+    56                                          
+    57 0000004E B320                            mov bl,32
+    58 00000050 38D8                            cmp al,bl
+    59 00000052 7407                            je skip;AL==' '
+    60                                          ;AL < '0'    
+    61                                          
+    62                                          schimbare: 
+    63 00000054 C686[16000000]58                mov byte[text+esi],88;schimbam cu caracterul 'X'
+    64                                          
+    65                                          skip:
+    66 0000005B 46                              inc esi
+    67                                          
+    68 0000005C E2C6                            loop repeta
+    69                                          
+    70 0000005E 68[16000000]                    push dword text
+    71 00000063 FF35[2B000000]                  push dword [descriptor_fis]
+    72 00000069 FF15[00000000]                  call [fprintf];afisam sirul
+    73 0000006F 83C408                          add esp, 4*2
+    74                                          
+    75 00000072 FF35[2B000000]                  push dword [descriptor_fis]
+    76 00000078 FF15[00000000]                  call [fclose];inchidem fisierul
+    77 0000007E 83C404                          add esp, 4
+    78                                          
+    79                                          final:
+    80                                          ; exit(0)
+    81 00000081 6A00                            push    dword 0      
+    82 00000083 FF15[00000000]                  call    [exit]       

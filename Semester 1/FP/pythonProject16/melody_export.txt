@@ -1,0 +1,11 @@
+Nirvana,Smells like Heaven,20.09.2006,Rock
+Mamaxita,ALex,19.09.2007,Jazz
+My Baby,Inna,20.12.2007,Pop
+Hills,The Weeknd,22.04.2009,Pop
+artis,titlu,20.10.2009,Pop
+Summertime,Lana del Ray,19.03.2010,Pop
+Metallica,Music,20.12.2018,Rock
+a,o,24.10.2020,Jazz
+y,b,04.05.8084,Pop
+z,a,15.10.8881,Rock
+r,o,28.10.9004,Pop
