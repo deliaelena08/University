@@ -1,0 +1,63 @@
+     1                                  bits 32 
+     2                                  ;Sa se citeasca de la tastatura doua numere a si b (in baza 10) si sa se calculeze a+b. Sa se afiseze rezultatul adunarii in baza 16.
+     3                                  
+     4                                  global start
+     5                                          
+     6                                  extern exit, printf, scanf  ; adaugam printf si scanf ca functii externe           
+     7                                  import exit msvcrt.dll     
+     8                                  import printf msvcrt.dll     ; indicam asamblorului ca functia printf se gaseste in libraria msvcrt.dll
+     9                                  import scanf msvcrt.dll      ; similar pentru scanf
+    10                                     
+    11                                  segment data use32 class=data
+    12                                  
+    13 00000000 00000000                        a dd 0
+    14 00000004 00000000                        b dd 0
+    15                                          
+    16 00000008 5072696D756C206E75-             message1 db "Primul numar este: ",0
+    16 00000011 6D617220657374653A-
+    16 0000001A 2000               
+    17 0000001C 256400                          format1 db "%d",0
+    18                                          
+    19 0000001F 416C20646F696C6561-             message2 db "Al doilea numar este: ",0
+    19 00000028 206E756D6172206573-
+    19 00000031 74653A2000         
+    20 00000036 256400                          format2 db "%d",0
+    21                                          
+    22 00000039 52657A756C74617475-             message3  db "Rezultatul adunarii este: %x", 0
+    22 00000042 6C206164756E617269-
+    22 0000004B 6920657374653A2025-
+    22 00000054 7800               
+    23                                          
+    24                                  segment code use32 class=code
+    25                                      start:
+    26 00000000 68[08000000]                    push dword message1
+    27 00000005 FF15[00000000]                  call [printf]
+    28 0000000B 83C404                          add esp,4*1;apelam functia de afisare pentru citirea primului numar
+    29                                      
+    30 0000000E 68[00000000]                    push dword a       ; punem parametrii pe stiva de la dreapta la stanga
+    31 00000013 68[1C000000]            		push dword format1
+    32 00000018 FF15[00000000]          		call [scanf]       ; apelam functia scanf pentru citirea primului numar
+    33 0000001E 83C408                          add esp, 4 * 2
+    34                                          
+    35 00000021 68[1F000000]                    push dword message2
+    36 00000026 FF15[00000000]                  call [printf]
+    37 0000002C 83C404                          add esp,4*1;apelam functia de afisare mesaj pentru al doilea numar
+    38                                          
+    39 0000002F 68[04000000]                    push dword b       ; punem parametrii pe stiva de la dreapta la stanga
+    40 00000034 68[36000000]            		push dword format2
+    41 00000039 FF15[00000000]          		call [scanf]       ; apelam functia scanf pentru citirea al doilea numar
+    42 0000003F 83C408                          add esp, 4 * 2
+    43                                          
+    44 00000042 A1[00000000]                    mov eax,[a]
+    45 00000047 8B1D[04000000]                  mov ebx,[b]
+    46                                          
+    47 0000004D 01D8                            add eax,ebx
+    48                                          
+    49 0000004F 50                              push eax  ; punem pe stiva valoarea lui n
+    50 00000050 68[39000000]            	    push dword message3  
+    51 00000055 FF15[00000000]          		call [printf]       ; apelam functia printf oentru afisarea sumei
+    52 0000005B 83C408                  		add esp, 4 * 2
+    53                                          
+    54                                          ; exit(0)
+    55 0000005E 6A00                            push    dword 0      
+    56 00000060 FF15[00000000]                  call    [exit]       

@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.27"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "rezolvare",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "rezolvare::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-rezolvare-Debug-c3abba0cbba0f9b1bf14.json",
+					"name" : "rezolvare",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/maria/Desktop/Year 1/Semestru 2/Algoritmica Grafelor/Subiecte test Lab07/2/rezolvare/cmake-build-debug",
+		"source" : "C:/Users/maria/Desktop/Year 1/Semestru 2/Algoritmica Grafelor/Subiecte test Lab07/2/rezolvare"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

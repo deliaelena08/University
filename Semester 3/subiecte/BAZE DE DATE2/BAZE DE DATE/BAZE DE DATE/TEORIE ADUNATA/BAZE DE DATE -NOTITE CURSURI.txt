@@ -1,0 +1,30 @@
+CURS 1
+*model ierarhic - campurile dupa care ne ghidam: articol aree autor, data publicarii etc..
+*redundanta: necesitatea de copiere a datelor de mai multe ori: un autor a scis mai multe articole si trb sa salvam datele
+ despre autor de mai multe ori, vrem sa scapam de aceasta redundanta
+
+CURS 3
+*DDL (data definition language): creare, stergere modificare
+ DML (data manipulation language): inserare, stergere, modificare
+ Control al accesului: definire de drepturi
+*SELECT * FROM Studens S WHERE S.age=21
+ daca vrem doar unele atribute, specificam in loc de * numele atributelor
+ pt texte care respecta un anumit sablon: S.name LIKE 'B_%B', _ e un caracter anonim, % orice sir de chrs
+ in SELECT putem avea expresii in care sa fie implicate denumiri de campuri: S.age-1 as age1 - daca nu specific
+		numele imi pune el new_field cred
+*INNER JOIN: practic imi combina tabelele
+*LEFT OUTER JOIN: voi avea inregistrarile din tabela din stanga aparand cel putin o data, chiar daca nu se leaga de 
+			tabela din dreaota (ex cu studenti care nu au note)
+*RIGHT OUTER JOIN: acelasi lucru dar in dreapta
+*FULL OUTER JOIN: le combina pe dreapta cu stanga 
+*IS NULL si IS NOT NULL
+*pot face SELECT in WHERE
+*cand fac GROUP BY, in select trebuie sa pun doar atribute care apar in GROUP BY, altfel nu merge
+*ORDER BY la fel, trb sa fie in functie de campurile din select
+
+CURS 4:
+DEPENDENTE FUNCTIONALE
+ex: numele regizorului e dependent functional de numele filmului
+
+CURS 5
+DESCOMPUNEREA RELATIILOR tf

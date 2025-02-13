@@ -1,0 +1,122 @@
+PC1 (VLAN 10):
+IP: 172.16.3.10
+Subnet: 255.255.255.0
+Gateway: 172.16.3.1
+
+PC2 (VLAN 20):
+IP: 172.16.2.10
+Subnet: 255.255.255.0
+Gateway: 172.16.2.1
+
+PC3 (VLAN 30):
+IP: 172.16.1.10
+Subnet: 255.255.255.0
+Gateway: 172.16.1.1
+
+PC7:
+IP: 192.168.100.1
+Subnet: 255.255.255.0
+Gateway: 192.168.100.1
+
+Switch 1 (VLAN 10):
+enable
+configure terminal
+vlan 10
+name VLAN10
+exit
+interface fastethernet 0/1
+switchport mode access
+switchport access vlan 10
+exit
+
+Switch 2 (VLAN 20):
+enable
+configure terminal
+vlan 20
+name VLAN20
+exit
+interface fastethernet 0/1
+switchport mode access
+switchport access vlan 20
+exit
+
+Switch 3 (VLAN 30):
+enable
+configure terminal
+vlan 30
+name VLAN30
+exit
+interface fastethernet 0/1
+switchport mode access
+switchport access vlan 30
+exit
+
+Switch 4:
+Switch4>enable
+Switch4#configure terminal
+
+! Configurare portul pentru PC4
+Switch4(config)#interface fastEthernet 0/4
+Switch4(config-if)#switchport mode access
+Switch4(config-if)#switchport access vlan 100
+Switch4(config-if)#no shutdown
+Switch4(config-if)#exit
+
+! Configurare portul trunk către Router2
+Switch4(config)#interface fastEthernet 0/24
+Switch4(config-if)#switchport mode trunk
+Switch4(config-if)#switchport trunk allowed vlan 100
+Switch4(config-if)#no shutdown
+Switch4(config-if)#exit
+
+! Salvare configurare
+Switch4#copy running-config startup-config
+
+Router1:
+Router1>enable
+Router1#configure terminal
+
+! Interfața către Router2
+Router1(config)#interface gigabitEthernet 0/0
+Router1(config-if)#ip address 192.168.0.1 255.255.255.252
+Router1(config-if)#no shutdown
+Router1(config-if)#exit
+
+! Rută statică pentru comunicare cu VLAN 100 prin Router2
+Router1(config)#ip route 192.168.100.0 255.255.255.0 192.168.0.2
+Router1(config)#exit
+
+Router2:
+Router2>enable
+Router2#configure terminal
+! Interfața către Router1
+Router2(config)#interface gigabitEthernet 0/0
+Router2(config-if)#ip address 192.168.0.2 255.255.255.252
+Router2(config-if)#no shutdown
+Router2(config-if)#exit
+
+! Interfața către PC4 (direct)
+Router2(config)#interface gigabitEthernet 0/1
+Router2(config-if)#ip address 192.168.100.1 255.255.255.0
+Router2(config-if)#no shutdown
+Router2(config-if)#exit
+
+! Rută statică pentru comunicare între rețele
+Router2(config)#ip route 172.16.0.0 255.255.0.0 192.168.0.1
+Router2(config)#exit
+
+
+TESTE:
+ping 192.168.0.1 (Router2 => Router1)
+ping 192.168.100.2 (Router2 => PC7)
+ping 192.168.100.1 (Switch4 => Router2)
+ping 192.168.100.1 (PC7 => Router2)
+ping 172.16.3.1 (PC1 => Router1)
+ping 172.16.3.10   (PC4 => PC1 în VLAN 10)
+ping 172.16.2.10   (PC4 => PC2 în VLAN 20)
+ping 172.16.1.10  (PC4 => PC3 în VLAN 30)
+
+
+
+
+

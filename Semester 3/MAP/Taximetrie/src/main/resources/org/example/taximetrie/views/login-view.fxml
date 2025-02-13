@@ -1,0 +1,16 @@
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      alignment="CENTER" spacing="10.0"
+      style="-fx-padding: 20; -fx-background-color: #f7f9fc;"
+      fx:controller="org.example.taximetrie.controllers.LoginController">
+    <TextField fx:id="usernameField"
+               promptText="Username"
+               style="-fx-pref-width: 300; -fx-padding: 5; -fx-border-color: #c2c2c2; -fx-border-radius: 5;"/>
+    <Button fx:id="loginButton"
+            text="Login"
+            onAction="#handleLogin"
+            style="-fx-background-color: #0078d4; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 8 16; -fx-border-radius: 5;"/>
+</VBox>

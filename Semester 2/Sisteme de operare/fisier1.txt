@@ -1,0 +1,240 @@
+/*#pragma once
+#include"Domain.h"
+#include<fstream>
+#include<vector>
+using std::vector;
+
+class RepoException {
+private: 
+	string message;
+public:
+	RepoException(string message) :message{ message } {};
+	string getErrorMessage() {
+		return this->message;
+	}
+	friend ostream& operator<<(ostream& stream, const RepoException& exception);
+};
+
+class RepoFile {
+private:
+	vector<Melodie> melodii;
+	string fName;
+	void loadData();
+	void writeToFile();
+
+public:
+	RepoFile(string fName) :fName{ fName } {
+		loadData();
+	}
+	void deleteMel(Melodie &mel);
+	void storeMel(Melodie& mel);
+	bool exists(int id);
+	void modifyMel(Melodie& mel,string title,int rank);
+	vector<Melodie>& getAll();
+};*/
+
+
+/*
+#pragma once
+#include"Service.h"
+#include<qwidget.h>
+#include<QtWidgets/qboxlayout.h>
+#include<QtWidgets/qpushbutton.h>
+#include<QtWidgets/qlineedit.h>
+#include<QtWidgets/qlistwidget.h>
+#include<QtWidgets/qmessagebox.h>
+#include<QtWidgets/qformlayout.h>
+
+class Intergata_GUI :public QWidget {
+public:
+	Intergata_GUI(Service& service) :service{ service } {
+		initGui();
+		loadData(list, service.sortByFirma());
+		initConnect();
+	}
+private:
+	Service& service;
+	QListWidget* list = new QListWidget;
+	QListWidget* listFiltre = new QListWidget;
+	QLineEdit* line = new QLineEdit;
+	QLineEdit* txtFirma = new QLineEdit;
+	QLineEdit* txtModel = new QLineEdit;
+	QLineEdit* txtAn = new QLineEdit;
+	QLineEdit* txtCuloare = new QLineEdit;
+	QLineEdit* txtFiltre = new QLineEdit;
+	QPushButton* btnExit = new QPushButton{ "&Exit" };
+	QPushButton* btnShow = new QPushButton{ "&Show cars" };
+	QPushButton* btnAdd = new QPushButton{ "&Add car" };
+	void initGui() {
+		QHBoxLayout* laymain = new QHBoxLayout{};
+		QVBoxLayout* leftlay = new QVBoxLayout{};
+		setLayout(laymain);
+		QFormLayout* texts = new QFormLayout;
+		texts->addRow("Firma", txtFirma);
+		texts->addRow("Model", txtModel);
+		texts->addRow("An", txtAn);
+		texts->addRow("Culoare", txtCuloare);
+		leftlay->addLayout(texts);
+
+		QHBoxLayout* lybtn = new QHBoxLayout{};
+		lybtn->addWidget(btnAdd);
+		lybtn->addWidget(btnShow);
+		lybtn->addWidget(btnExit);
+		leftlay->addLayout(lybtn);
+
+		leftlay->addWidget(txtFiltre);
+		leftlay->addWidget(listFiltre);
+		laymain->addLayout(leftlay);
+		laymain->addWidget(list);
+	}
+
+	void initConnect() {
+		QObject::connect(btnExit, &QPushButton::clicked, [&]() {
+			QMessageBox::StandardButton reply = QMessageBox::question(this, "Exit", "Are you sure?", QMessageBox::Yes | QMessageBox::No);
+			if (reply == QMessageBox::Yes)
+				close();
+			});
+		QObject::connect(btnAdd, &QPushButton::clicked, [&]() {
+			string firma=txtFirma->text().toStdString();
+			string model = txtModel->text().toStdString();
+			int an = txtAn->text().split(" ")[0].toInt();
+			string culoare = txtCuloare->text().toStdString();
+			service.storeCar(firma, model, an, culoare);
+			loadData(list, service.sortByFirma());
+			});
+		QObject::connect(btnShow, &QPushButton::clicked, [&]() {
+			string firma = txtFiltre->text().toStdString();
+			vector<Masina> masina = service.filtreByFirma(firma);
+			listFiltre->clear();
+			QListWidgetItem* firstline1 = new QListWidgetItem;
+			firstline1->setText("Masini: " + QString::number(masina.size()));
+			listFiltre->addItem(firstline1);
+			for (auto& ma : masina) {
+				QListWidgetItem* masinita = new QListWidgetItem;
+				masinita->setText(QString::fromStdString(ma.getModel()) + " " + QString::number(ma.getAn()));
+				listFiltre->addItem(masinita);
+			}
+			});
+
+	}
+
+	void loadData(QListWidget* list, vector<Masina> masini) {
+		list->clear();
+		QListWidgetItem* firstline = new QListWidgetItem;
+		firstline->setText("Firma  Model");
+		list->addItem(firstline);
+		for (auto& mas : masini) {
+			QListWidgetItem* masina = new QListWidgetItem;
+			QString color = QString::fromStdString(mas.getCuloARE());
+			masina->setText(QString::fromStdString(mas.getFirma()) + ' ' + QString::fromStdString(mas.getModel()));
+			masina->setBackground(QColor(color));
+			list->addItem(masina);
+		}
+	}
+};
+*/
+
+/*
+#include "exemplu4.h"
+#include <QtWidgets/QApplication>
+#include"Test.h"
+#include"Gui.h"
+
+RepoFile repo{ "fisier.txt" };
+Service service{repo};
+int main(int argc, char *argv[])
+{
+    testAll();
+    QApplication a(argc, argv);
+    Intergata_GUI gui(service);
+    gui.show();
+    return a.exec();
+}
+
+*/
+
+/*
+....
+int nr_colums = 5;
+int nr_lines = 3;
+this->tabel = new QTableWidget(nr_lines, nr_colums);
+QStringList tableHeader;
+....
+
+
+    void loadData(QTableWidget* tabel, vector<Tractor> tractoare) {
+        tabel->clearContents();
+        this->tabel->setRowCount(tractoare.size());
+        int line = 0;
+        for (auto& tr : tractoare) {
+            vector<Tractor> ceva = service.filtred(tr.getType());
+            int tipuri = ceva.size();
+            this->tabel->setItem(line, 0, new QTableWidgetItem(QString::number(tr.getId())));
+            this->tabel->setItem(line, 1, new QTableWidgetItem(QString::fromStdString(tr.getName())));
+            this->tabel->setItem(line, 2, new QTableWidgetItem(QString::fromStdString(tr.getType())));
+            this->tabel->setItem(line, 3, new QTableWidgetItem(QString::number(tr.getWheels())));
+            this->tabel->setItem(line, 4, new QTableWidgetItem(QString::number(tipuri)));
+            line++;
+        }
+    }
+....
+QTableWidget::connect(tabel, &QTableWidget::itemSelectionChanged, [&]() {
+    auto item = tabel->currentItem();
+    QStringList parts;
+    for (int i = 0; i < 5; i++)
+        parts.push_back(tabel->item(item->row(), i)->text());
+    txtId->setText(parts[0]);
+    txtName->setText(parts[1]);
+    txtType->setText(parts[2]);
+    txtWheels->setText(parts[3]);
+    });
+....
+*/
+
+/*
+#pragma once
+#include "domain.h"
+#include <vector>
+#include <string>
+using std::string;
+using std::vector;
+
+class ExceptionValidator {
+	vector<string> errors_message;
+public:
+	ExceptionValidator(vector<string> errors_message) :errors_message{ errors_message } {};
+
+	string getErrorMessages() {
+		string msg = "";
+		for (const string e : errors_message) {
+			msg += e;
+		}
+		return msg;
+	}
+};
+
+/*
+Validarea produsului va lua in considerare urmatoarele principii:
+Orice string : numele,produsului,alproducatorului sau tipul trebuie sa contina cel putin 2 litere
+Pretul nu poate fi un numar negativ
+*/
+
+class ProductValidator {
+
+public:
+	void valid(const Product& p) {
+		vector<string> errors;
+		if (p.getname().length() < 2)
+			errors.push_back("Numele prdusului trebuie sa contina cel putin 2 caractere\n");
+		if (p.getprice() < 0)
+			errors.push_back("Pretul nu poate fi negativ\n");
+		if (p.getproductor().length() < 2)
+			errors.push_back("Producatorul trebuie sa aiba cel putin 2 litee\n");
+		if (p.gettype().length() < 2)
+			errors.push_back("Tipul trebuie sa aiba cel putin 2 litere\n");
+		if (errors.size() > 0)
+			throw ExceptionValidator(errors);
+	}
+
+};
+*/

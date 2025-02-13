@@ -1,0 +1,4 @@
+1 Ceva una 2
+5 Ceva altu 2
+2 melodie alta 4
+3 auleu una 10

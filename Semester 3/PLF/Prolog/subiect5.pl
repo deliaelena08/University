@@ -1,0 +1,30 @@
+lungime([],0):-!.
+lungime([_|T],Rez):-
+	lungime(T,Rez1),
+	Rez is Rez1+1.
+
+sterge_subliste([],_,[]):-!.
+sterge_subliste([H|T],N,Rez):-
+	N>0,
+	is_list(H),
+	lungime(H,Lg),
+	Lg mod 2 =:= 0,
+	N1 is N-1,
+	sterge_subliste(T,N1,Rez).
+sterge_subliste([H|T],N,[H|Rez]):-
+	sterge_subliste(T,N,Rez).
+%toate submultimile unei liste date care dau o suma S
+
+submultimisuma(_,0,Sub,Sub):-!.
+submultimisuma([H|T],S,Sub,Rez):-
+	Sum1 is S-H,
+	Sum1>=0,
+	submultimisuma(T,Sum1,[H|Sub],Rez).
+submultimisuma([_|T],S,Sub,Rez) :-
+    submultimisuma(T,S,Sub,Rez).
+
+submultimi(L,S,C):-
+	submultimisuma(L,S,[],C).
+
+toate(L,S,Rez):-findall(Subm,submultimi(L,S,Subm),Rez).
+

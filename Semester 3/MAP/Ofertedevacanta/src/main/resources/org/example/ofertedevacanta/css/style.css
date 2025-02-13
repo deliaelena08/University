@@ -1,0 +1,41 @@
+.header-label {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+    -fx-padding: 10px;
+}
+
+.combo-box {
+    -fx-padding: 5px;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 5px;
+    -fx-background-color: #ecf0f1;
+}
+
+.table-view {
+    -fx-border-color: #95a5a6;
+    -fx-border-radius: 10px;
+    -fx-background-color: white;
+    -fx-font-size: 14px;
+}
+
+.header-label {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #34495e;
+    -fx-padding: 10px;
+}
+
+.date-picker, .text-field, .button {
+    -fx-padding: 10px;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 5px;
+    -fx-background-color: #ecf0f1;
+}
+
+.button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}

@@ -1,0 +1,25 @@
+%parcugem lista din 2 in 2 (i)
+numar_par_elemente([]):-!.
+numar_par_elemente([_,_|T]) :-
+    numar_par_elemente(T).
+
+%minim(L:list,Rez:Integer)(i,o)
+minim([H],H):-!.
+minim([H|T],H):-
+	minim(T,Rez),
+	Rez>H,!.
+minim([_|T],Rez):-
+	minim(T,Rez).
+
+%stergereaparitie(L:list,El:integer,Flag:integer,Rez:list)
+stergereaparitie([],_,_,[]):-!.
+stergereaparitie([El|T],El,F,Rez):-
+	F=0,!,
+	stergereaparitie(T,El,1,Rez).
+stergereaparitie([H|T],El,F,[H|Rez]):-
+	stergereaparitie(T,El,F,Rez).
+
+stergereprima(L,Rez):-
+	minim(L,El),
+	stergereaparitie(L,El,0,Rez).
+

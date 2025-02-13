@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.text.Text?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml" stylesheets="@../css/profile.css" fx:controller="com.example.demo.SocialNetwork.Controller.ProfileController" prefWidth="600" prefHeight="400">
+    <children>
+        <!-- Background -->
+        <VBox spacing="20" alignment="CENTER" prefWidth="600" prefHeight="400">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20" />
+            </padding>
+            <children>
+                <HBox spacing="50" alignment="CENTER">
+                    <VBox alignment="CENTER" prefWidth="100">
+                        <Text fx:id="friends" styleClass="bold-text"/>
+                        <Text text="prieteni"/>
+                    </VBox>
+                    <ImageView fx:id="profileImage" layoutX="50" layoutY="50" fitWidth="100" fitHeight="100" />
+                    <VBox alignment="CENTER"  prefWidth="100">
+                        <Text fx:id="friendsrequest" styleClass="bold-text"/>
+                        <Text text="cereri de prietenii"/>
+                    </VBox>
+                </HBox>
+            </children>
+            <children>
+                <!-- Profile Information -->
+                <GridPane hgap="10" vgap="10" alignment="CENTER">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="RIGHT" />
+                        <ColumnConstraints hgrow="ALWAYS" />
+                    </columnConstraints>
+
+                    <!-- Name Field -->
+                    <Label text="" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <Text fx:id="nameField" GridPane.rowIndex="0" GridPane.columnIndex="1" GridPane.halignment="CENTER"
+                          style="-fx-font-family: 'Arial'; -fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2a9df4;" />
+
+                    <!-- Email Field -->
+                    <Label text="" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+                    <Text fx:id="emailField" GridPane.rowIndex="1" GridPane.columnIndex="1" GridPane.halignment="CENTER"/>
+
+                    <!-- Description -->
+                    <Label text="" alignment="TOP_RIGHT"  GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                    <TextArea fx:id="descriptionArea" prefRowCount="4" wrapText="true" editable="false"  GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                </GridPane>
+
+                <!-- Buttons -->
+                <HBox spacing="15" alignment="CENTER">
+                    <children>
+                        <Button fx:id="modifyDescriptionButton" text="Modify Description" onAction="#handleModifyDescription" />
+                        <Button fx:id="seeFriendsButton" text="See My Friends" onAction="#handleSeeFriends" />
+                        <Button fx:id="exitButton" text="Exit" onAction="#handleExit" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

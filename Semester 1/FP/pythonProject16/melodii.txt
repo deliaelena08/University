@@ -1,0 +1,11 @@
+The Weeknd,Hills,Pop,22.04.2009
+Lana del Ray,Summertime,Pop,19.03.2010
+Inna,My Baby,Pop,20.12.2007
+ALex,Mamaxita,Jazz,19.09.2007
+Smells like Heaven,Nirvana,Rock,20.09.2006
+Music,Metallica,Rock,20.12.2018
+titlu,artis,Pop,20.10.2009
+o,r,Pop,28.10.9004
+o,a,Jazz,24.10.2020
+b,y,Pop,04.05.8084
+a,z,Rock,15.10.8881

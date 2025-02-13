@@ -1,0 +1,58 @@
+/* loginstyle.css */
+.root {
+    -fx-background-color: linear-gradient(to bottom, #e4c4e6, #b7e6e7);
+    -fx-font-family: "Arial";
+}
+
+.title-label {
+    -fx-font-size: 32px;
+    -fx-text-fill: #333333;
+    -fx-font-weight: bold;
+}
+
+.subtitle-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #666666;
+}
+
+.input-field {
+    -fx-max-width: 400px;
+    -fx-padding: 10px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-border-color: #cccccc;
+    -fx-background-color: #ffffff;
+}
+
+.input-field:focused {
+    -fx-border-color: #67aaf9;
+    -fx-background-color: #ffffff;
+}
+
+.login-button {
+    -fx-background-color: #6fc2c2;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 16px;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.login-button:hover {
+    -fx-background-color: #5aa3a3;
+}
+
+.signup-button {
+    -fx-background-color: #fff;
+    -fx-text-fill: #6fc2c2;
+    -fx-font-size: 14px;
+    -fx-padding: 8px 15px;
+    -fx-border-color: #6fc2c2;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.signup-button:hover {
+    -fx-background-color: #6fc2c2;
+    -fx-text-fill: #fff;
+}

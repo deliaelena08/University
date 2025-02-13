@@ -1,0 +1,73 @@
+#input list
+#output int
+def an(n1):
+    #Function return the sum of the days in an year based on the months from the leap year
+    s1=0
+    #This case veryfies if the years are equal and in this case we go through the months between them
+    if n1[2]==n2[2]:
+        while n1[1]<n2[1]:
+            s1+=lunile_anului(n1)
+            n1[1]+=1
+        s1+=n2[0]
+    #This case calculates the remaining days from the current year
+    else:
+        while n1[1]<=12:
+            s1+=lunile_anului(n1)
+            n1[1]+=1
+    return s1
+
+def lunile_anului(n1):
+    #This function returns the days in each months of the year
+    option=n1[1]
+    an=n1[2]
+    match option:
+        case 1:
+            return 31
+        case 2:
+            if an%400==0:
+                return 29
+            else:
+                return 28
+        case 3:
+            return 31
+        case 4:
+            return 30
+        case 5:
+            return 31
+        case 6:
+            return 30
+        case 7:
+            return 31
+        case 8:
+            return 31
+        case 9:
+            return 30
+        case 10:
+            return 31
+        case 11:
+            return 30
+        case 12:
+            return 31
+
+
+n1=input("Introduceti data de nastere:")
+#This operation separates the input date from the "." symbol
+n1=n1.split(".")
+n2=input("Introduceti data curenta:")
+n2=n2.split(".")
+#This operation makes the dates from string to int
+n1= [int(x) for x in n1]
+n2= [int(x) for x in n2]
+s=0
+anul=0
+#In this while we calculate the age in days
+while n1[2]<=n2[2]:
+    if n1[0]!=1:
+        s=lunile_anului(n1)-n1[0]
+    s=s+an(n1)
+    n1[1]=1
+    n1[2]+=1
+print (s)
+
+
+
