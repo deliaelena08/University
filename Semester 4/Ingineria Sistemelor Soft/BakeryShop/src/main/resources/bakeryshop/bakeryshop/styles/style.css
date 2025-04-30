@@ -1,0 +1,61 @@
+.root-background {
+    -fx-background-color: linear-gradient(to bottom right, #fdf497, #fdf497, #fd5949, #d6249f, #285AEB);
+}
+
+.title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: goldenrod;
+}
+
+.text-field, .password-field {
+    -fx-background-radius: 20;
+}
+
+.button {
+    -fx-background-color: pink;
+    -fx-border-color: black;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-padding: 5 15;
+    -fx-font-weight: bold;
+}
+
+
+.menu-title {
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #5c3c2d;
+    -fx-padding: 10 0 30 0;
+}
+
+.menu-button {
+    -fx-background-color: #ffafcc;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 30;
+    -fx-pref-width: 250;
+    -fx-pref-height: 45;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 4, 0, 0, 2);
+}
+
+.logout-button {
+    -fx-background-color: #c9184a;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 30;
+    -fx-pref-width: 250;
+    -fx-pref-height: 45;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 4, 0, 0, 2);
+}
+.cart-label {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+.background-cart{
+    -fx-background-color: #ffafcc;
+}
