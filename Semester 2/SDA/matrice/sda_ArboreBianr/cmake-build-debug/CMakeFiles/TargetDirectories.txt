@@ -1,0 +1,3 @@
+C:/Users/tapuc/CLionProjects/sda_ArboreBianr/cmake-build-debug/CMakeFiles/sda_ArboreBianr.dir
+C:/Users/tapuc/CLionProjects/sda_ArboreBianr/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/tapuc/CLionProjects/sda_ArboreBianr/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,59 @@
+
+
+stergere([],_,_,[]):-!.
+stergere([_|T],Poz,Index,Rez):-
+	Poz =:= Index*4+2,!,
+	Poz1 is Poz+1,
+	Indexnou is Index+1,
+	stergere(T,Poz1,Indexnou,Rez).
+stergere([H|T],Poz,Index,[H|Rez]):-
+	Poznou is Poz+1,
+	stergere(T,Poznou,Index,Rez).
+
+sterge_pozitii(L,Rez):-stergere(L,1,0,Rez).
+
+%lista submultimilor cu k elemente in progresie aritmetica
+verifica(_,[]):-!.
+verifica(_,[_]):-!.
+verifica(A,[B,C|_]):-
+	Dif is B-C,
+	A=:= B+Dif.
+insereaza7([],E,[E]):-!.
+insereaza7([H|T],E,[E,H|T]).
+insereaza7([H|T],E,[H|Rez]):-
+	insereaza7(T,E,Rez).
+
+permutari7([],[]).
+permutari7([H|T],[H2|Rez2]):-
+	permutari7(T,Rez1),
+	insereaza7(Rez1,H,[H2|Rez2]),
+	verifica(H2, Rez2).
+aranjamente7([],0,[]).
+aranjamente7([H|T],K,[H|Rez]):-
+	K>0,
+	K1 is K-1,
+	aranjamente7(T,K1,Rez).
+aranjamente7([_|T],K,Rez):-
+	aranjamente7(T,K,Rez).
+
+onesolution(L,K,Rez):-
+	aranjamente7(L,K,Rez1),
+	permutari7(Rez1,Rez).
+
+allsolutions(L,K,R):-findall(Sub,onesolution(L,K,Sub),R).
+
+
+%cevasubiect engleza
+f([],0).
+f([H|T],S):-f(T,S1),
+	H<S1,!
+	,S is S1+H.
+f([_|T],S):-f(T,S1),S is S1+2.
+
+f1([],0).
+f1([H|T],S):-f(T,S1),aux(H,S1,S).
+
+aux(H,S1,Rez):-
+	H<S1,!,Rez is S1+H.
+aux(_,S1,Rez):-
+	Rez is S1+2.

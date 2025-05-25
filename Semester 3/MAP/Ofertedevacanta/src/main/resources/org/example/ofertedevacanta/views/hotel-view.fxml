@@ -1,0 +1,22 @@
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      alignment="CENTER" spacing="10.0"
+      stylesheets="@../css/hotel-style.css"
+      fx:controller="org.example.ofertedevacanta.controllers.HotelController">
+
+    <Label fx:id="titleLabel" text="Select Location" styleClass="header-label"/>
+    <ComboBox fx:id="locationComboBox" promptText="Select a location"/>
+    <TableView fx:id="hotelsTable" prefWidth="600">
+        <columns>
+            <TableColumn fx:id="nameColumn" text="Hotel Name" prefWidth="150"/>
+            <TableColumn fx:id="noRoomsColumn" text="Number of Rooms" prefWidth="150"/>
+            <TableColumn fx:id="pricePerNightColumn" text="Price per Night" prefWidth="150"/>
+            <TableColumn fx:id="typeColumn" text="Type" prefWidth="150"/>
+        </columns>
+    </TableView>
+</VBox>

@@ -1,0 +1,53 @@
+     1                                  bits 32 ; assembling for the 32 bits architecture
+     2                                  
+     3                                  ; declare the EntryPoint (a label defining the very first instruction of the program)
+     4                                  global start        
+     5                                  
+     6                                  ; declare external functions needed by our program
+     7                                  extern exit               ; tell nasm that exit exists even if we won't be defining it
+     8                                  import exit msvcrt.dll    ; exit is a function that ends the calling process. It is defined in msvcrt.dll
+     9                                                            ; msvcrt.dll contains exit, printf and all the other important C-runtime specific functions
+    10                                  
+    11                                  ; our data is declared here (the variables needed by our program)
+    12                                  segment data use32 class=data
+    13 00000000 2573000000000000            format dd "%s",0
+    14 00000008 00000000                    n dd 0
+    15 0000000C 00<rept>                    cuvant times 101 db 0
+    16 00000071 03000000                    testi dd 3
+    17 00000075 42616720706C20696E-         testprop db "Bag pl in morti.",0
+    17 0000007E 206D6F7274692E00   
+    18                                  
+    19                                  ; our code starts here
+    20                                  segment code use32 class=code
+    21                                      start:
+    22 00000000 8B0D[71000000]                  mov ecx,[testi]; i
+    23 00000006 BB[75000000]                    mov ebx,testprop;`adresa sirului din care extrag cuvinte
+    24                                                 
+    25                                          repeta:
+    26 0000000B 83F901                          cmp ecx,1
+    27 0000000E 7409                            jz foundword
+    28                                              
+    29                                              cautarespatiu: ;cuvintele sunt separate prin spatiu
+    30 00000010 43                                  inc ebx
+    31 00000011 803B20                              cmp [ebx],byte ' '
+    32 00000014 75FA                                jnz cautarespatiu
+    33                                              
+    34 00000016 49                              dec ecx
+    35 00000017 EBF2                            jmp repeta
+    36                                          
+    37                                          foundword:
+    38 00000019 FC                              cld
+    39 0000001A 43                              inc ebx;pentru ca eram la space.
+    40 0000001B 89DE                            mov esi,ebx
+    41 0000001D BF[0C000000]                    mov edi,cuvant
+    42                                          stocare:
+    43 00000022 A4                                  movsb
+    44 00000023 803E20                              cmp [esi],byte ' '
+    45 00000026 7407                                jz final
+    46 00000028 803E2E                              cmp [esi],byte '.'
+    47 0000002B 7402                                jz final
+    48 0000002D EBF3                            jmp stocare
+    49                                          ; exit(0)
+    50                                          final:
+    51 0000002F 6A00                            push    dword 0      ; push the parameter for exit onto the stack
+    52 00000031 FF15[00000000]                  call    [exit]       ; call exit to terminate the program

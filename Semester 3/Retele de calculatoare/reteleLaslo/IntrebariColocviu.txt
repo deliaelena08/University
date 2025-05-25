@@ -1,0 +1,24 @@
+Colocviu:
+o sa ne dea o schema o configuratie si sa ne dea o variata de raspuns
+
+intrebare rip,vlan
+o problema de adresare
+o comanda 
+servere dhcp dns
+una doua intrebari redactionale maxim 3 4 randuri
+
+ip-uri cu clase
+o intrebare ip
+o intrebare tcp udp
+vlan
+rutare statica
+rutare dinamica
+1 2 dns dhcp
+nu ne da din securitate
+poate o intrebare de nat
+nu ne da wireless
+
+ex:
+cum configuram un port intr un wlan
+ce face telnet
+ce face o chestie banala:)

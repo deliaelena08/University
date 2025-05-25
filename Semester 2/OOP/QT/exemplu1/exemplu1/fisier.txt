@@ -1,0 +1,6 @@
+1 tractor rosu 2
+2 tractor verde 2
+3 tractor rosu 6
+5 masina smecher 4
+6 audi audi 8
+4 www ww 8

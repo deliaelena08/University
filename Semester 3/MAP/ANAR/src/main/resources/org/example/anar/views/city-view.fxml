@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.anar.controllers.CitiesController"
+      alignment="CENTER" spacing="20.0" stylesheets="@../css/city-style.css">
+
+    <Text text="City Risk Warnings" styleClass="title-text" />
+
+    <VBox fx:id="reducedRiskBox" spacing="10.0" alignment="TOP_CENTER" styleClass="risk-box reduced-risk">
+        <Text text="Reduced Risk" styleClass="risk-title" />
+        <ListView fx:id="reducedRiskList" prefHeight="150.0" />
+    </VBox>
+
+    <VBox fx:id="mediumRiskBox" spacing="10.0" alignment="TOP_CENTER" styleClass="risk-box medium-risk">
+        <Text text="Medium Risk" styleClass="risk-title" />
+        <ListView fx:id="mediumRiskList" prefHeight="150.0" />
+    </VBox>
+
+    <VBox fx:id="majorRiskBox" spacing="10.0" alignment="TOP_CENTER" styleClass="risk-box major-risk">
+        <Text text="Major Risk" styleClass="risk-title" />
+        <ListView fx:id="majorRiskList" prefHeight="150.0" />
+    </VBox>
+
+</VBox>

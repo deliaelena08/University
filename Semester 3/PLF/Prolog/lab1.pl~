@@ -1,0 +1,6 @@
+% Cazul in care n = 0, +l1...ln
+intercaleaza(L, E, 0, [E|L]):-!.
+intercaleaza([],_,_,[]):-!.
+intercaleaza([H|T], E, N, [H|R]) :-
+	N1 is N-1,
+	intercaleaza(T,E,N1,R).

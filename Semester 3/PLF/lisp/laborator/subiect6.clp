@@ -1,0 +1,28 @@
+
+
+(DEFUN dublare(L N Poz)
+	(COND
+		((null L) nil)
+		((= (mod Poz N) 0) (cons (car L) (cons (car L) (dublare (cdr L) N (+ 1 Poz)))))
+		(t (cons (car L) (dublare (cdr L) N (+ Poz 1))))
+	)
+)
+;(solutie4 '(1 2 3 4 5 6 7 8 9) '3) 
+(Defun solutie4(L N)
+	(dublare L N 1)
+)
+;    '(1 A(B 2)(1 C 4)(D 1 (6 F))((G 4) 6))
+(DEFUN liniarizare(L)
+(COND ((null L) nil)
+	  ((atom L) (list L))
+	  ((listp L) (MAPCAN #'liniarizare L))
+)
+)
+
+(DEFUN rezolva(L)
+(COND ((null L) 0)
+	  ((atom L) 0)
+	  ((AND (listp L) (not (numberp (car (liniarizare L))))) (+ 1 (apply #'+ (MAPCAR #'rezolva L))))
+	  (t(apply #'+ (MAPCAR #'rezolva L)))
+)
+)

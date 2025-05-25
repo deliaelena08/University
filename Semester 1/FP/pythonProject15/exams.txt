@@ -1,0 +1,7 @@
+20:02,14:00,FP,normal
+04:02,13:00,FP,restanta
+04:02,09:00,Acasa,normal
+09:10,00:00,Analiza,restanta
+24:11,08:00,ALgebra,normal
+20:10,08:00,ALgebra,restanta
+12:12,06:00,Asc,normal

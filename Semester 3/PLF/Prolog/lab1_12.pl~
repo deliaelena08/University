@@ -1,0 +1,20 @@
+%substituie(L:list,El1:Integer,El2:Integer,Rez:list)
+substituie([],_,_,[]):-!.
+substituie([H|T],El,El2,[El2|Rez]):-
+	H=:=El,!,
+	substituie(T,El,El2,Rez).
+substituie([H|T],El,El2,[H|Rez]):-
+	substituie(T,El,El2,Rez).
+
+construire_sublista([],_,_,[]):-!.
+construire_sublista([H|T],M,N,[H|Rez]):-
+	M=1,
+	N>0,!,
+	N1 is N-1,
+	construire_sublista(T,1,N1,Rez).
+construire_sublista(_,1,0,[]):-!.
+construire_sublista([_|T],M,N,Rez):-
+	M>1,
+	M1 is M-1,
+	N1 is N-1,
+	construire_sublista(T,M1,N1,Rez).

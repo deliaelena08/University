@@ -1,0 +1,22 @@
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.Button?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="bakeryshop.bakeryshop.controllers.ClientOrdersController"
+            stylesheets="@../styles/style.css" styleClass="root-background">
+    <VBox spacing="15" alignment="CENTER" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.bottomAnchor="10">
+        <Label text="Order History" style="-fx-font-size: 18px;" />
+        <TableView fx:id="tableClientOrders" prefHeight="400">
+        <columns>
+                <TableColumn fx:id="columnOrderId" text="Order ID" />
+                <TableColumn fx:id="columnOrderDate" text="Order Date" />
+                <TableColumn fx:id="columnTotalPrice" text="Total Price" />
+                <TableColumn fx:id="columnStatus" text="Status" />
+            </columns>
+        </TableView>
+        <Button text="Back" onAction="#handleBack" />
+    </VBox>
+</AnchorPane>
