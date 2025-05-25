@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="bakeryshop.bakeryshop.controllers.MainEmployeeController" stylesheets="@../styles/style.css">
+    <center>
+        <VBox spacing="10" styleClass="root-background"
+              AnchorPane.topAnchor="0.0"
+              AnchorPane.bottomAnchor="0.0"
+              AnchorPane.leftAnchor="0.0"
+              AnchorPane.rightAnchor="0.0">
+            <Label text="Comenzile tale" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+            <TableView fx:id="ordersTable" prefHeight="400">
+                <columns>
+                    <TableColumn fx:id="cakeNameColumn" text="Produs"/>
+                    <TableColumn fx:id="quantityColumn" text="Cantitate"/>
+                    <TableColumn fx:id="priceColumn" text="Pret"/>
+                    <TableColumn fx:id="orderDateColumn" text="Data Comanda"/>
+                    <TableColumn fx:id="statusColumn" text="Status"/>
+                    <TableColumn fx:id="actionColumn" text="Actiuni"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+</BorderPane>
