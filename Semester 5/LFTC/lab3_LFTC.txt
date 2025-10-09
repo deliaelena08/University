@@ -1,0 +1,6 @@
+main {
+integer a
+read a
+if a > 0 {
+    c <- a    // 'c' nedeclarat -> eroare lexical/semantic în MLP și în C-like
+// lipseste acolada de inchidere
