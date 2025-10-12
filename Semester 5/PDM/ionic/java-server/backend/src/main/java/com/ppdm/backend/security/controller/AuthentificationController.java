@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDateTime;
 import java.util.Map;
 
 @RestController
@@ -45,4 +46,53 @@ public class AuthentificationController {
         response.addCookie(cookie);
         return ResponseEntity.ok(Map.of("token", jwt));
     }
+
+    @PostMapping("/signup")
+    @SneakyThrows
+    public ResponseEntity<?> signup(@RequestBody SignupRequest request, HttpServletResponse response) {
+        UserDto user;
+        try {
+            UserDto userDto = new UserDto();
+            userDto.setUsername(request.getUsername());
+            userDto.setPassword(request.getPassword());
+            userDto.setActive(true);
+            userDto.setLastActive(LocalDateTime.now());
+            user = userService.saveUser(userDto);
+
+            String jwt = jwtTokenService.createJwtToken(user.getId(), user.getUsername());
+            Cookie cookie = new Cookie("auth-cookie", jwt);
+            cookie.setPath("/");
+            cookie.setDomain("localhost");
+            cookie.setHttpOnly(false);
+            response.addCookie(cookie);
+
+            return ResponseEntity.status(HttpStatus.CREATED)
+                    .body(Map.of(
+                            "id", user.getId(),
+                            "username", user.getUsername(),
+                            "token", jwt
+                    ));
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body(Map.of("error", e.getMessage()));
+        }
+    }
+
+    @PostMapping("/logout")
+    public ResponseEntity<?> logout(@RequestBody Map<String, String> request, HttpServletResponse response) {
+        String username = request.get("username");
+        if (username != null) {
+            userService.setUserInactive(username);
+        }
+
+        Cookie cookie = new Cookie("auth-cookie", null);
+        cookie.setPath("/");
+        cookie.setHttpOnly(false);
+        cookie.setMaxAge(0);
+        response.addCookie(cookie);
+
+        return ResponseEntity.ok(Map.of("message", "Logged out successfully"));
+    }
+
+
 }

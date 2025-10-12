@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
 
 @Service
 @RequiredArgsConstructor
@@ -32,16 +33,21 @@ public class UserService {
 
     public UserDto saveUser(UserDto userDto) {
         UserEntity user = mapper.dtoToEntity(userDto);
-
         if (userRepository.existsByUsername(user.getUsername())) {
             throw new UserAlreadyExistException();
         }
-
         user.setLastActive(LocalDateTime.now());
-        user.setActive(true);
+        UserEntity saved = userRepository.save(user);
 
-        return mapper.entityToDto(userRepository.save(user));
+        Map<String, Object> message = Map.of(
+                "type", "CREATE",
+                "payload", mapper.entityToDto(saved)
+        );
+        simpMessagingTemplate.convertAndSend("/ws/users", message);
+
+        return mapper.entityToDto(saved);
     }
+
 
     public UserDto updateUser(Long id, UserUpdateDto userDto) {
         UserEntity user = userRepository.findById(id).orElseThrow(UserNotFoundException::new);
@@ -50,13 +56,18 @@ public class UserService {
 
         user.setUsername(userDto.getUsername());
         user.setLastActive(LocalDateTime.now());
+        user.setActive(user.getActive());
 
         if (emailChanged && userRepository.existsByUsername(user.getUsername())) {
-            throw new InvalidUserException("Email already exists!");
+            throw new InvalidUserException("Username already exists!");
         }
 
         UserEntity updatedEntity = userRepository.save(user);
-        simpMessagingTemplate.convertAndSend("/ws/user-updated", mapper.userUpdateDtoFromEntity(updatedEntity));
+        Map<String, Object> message = Map.of(
+                "type", "UPDATE",
+                "payload", mapper.entityToDto(updatedEntity)
+        );
+        simpMessagingTemplate.convertAndSend("/ws/users", message);
         return mapper.entityToDto(updatedEntity);
     }
 
@@ -77,8 +88,33 @@ public class UserService {
         }
 
         user.setLastActive(LocalDateTime.now());
-        userRepository.save(user);
+        user.setActive(true);
+        UserEntity saved = userRepository.save(user);
 
-        return mapper.entityToDto(user);
+        Map<String, Object> message = Map.of(
+                "type", "UPDATE",
+                "payload", mapper.entityToDto(saved)
+        );
+        simpMessagingTemplate.convertAndSend("/ws/users", message);
+        return mapper.entityToDto(saved);
     }
+
+
+    public void setUserInactive(String username) {
+        var user = userRepository.findByUsername(username);
+        if (user != null) {
+            user.setActive(false);
+            user.setLastActive(LocalDateTime.now());
+            UserEntity updatedEntity = userRepository.save(user);
+
+            Map<String, Object> message = Map.of(
+                    "type", "UPDATE",
+                    "payload", mapper.entityToDto(updatedEntity)
+            );
+            simpMessagingTemplate.convertAndSend("/ws/users", message);
+        }
+    }
+
+
+
 }
