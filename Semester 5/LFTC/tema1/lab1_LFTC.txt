@@ -21,3 +21,8 @@ numbers <- number | numbers number
 leter <- a | b | ... | z
 number <- 0 | 1 | ... | 9
 symbols <- "_" | "$" | "#"
+
+/**
+TO DO
+do while, for , ++, --, list, decl<-expr,comentarii,switch case,return,break,continue
+**/
