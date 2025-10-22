@@ -24,5 +24,4 @@ if (!(Test-Path outJ.csv)){
     Set-Content outJ.csv 'Tip Matrice,Nr threads,Timp executie'
 }
 
-# Append
 Add-Content outJ.csv ",$($args[1]),$($media)"
