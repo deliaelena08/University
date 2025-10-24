@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int main() {
+int main1() {
     srand(time(0));
 
     // testul 1: N=M=10, n=m=3

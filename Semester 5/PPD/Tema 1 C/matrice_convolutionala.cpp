@@ -9,9 +9,14 @@ using namespace std;
 using namespace std::chrono;
 
 int n, m, k;
-vector<vector<int>> matriceInput;
-vector<vector<int>> matriceOutput;
-vector<vector<int>> kernel;
+const int MAX_N = 10000;
+const int MAX_M = 10000;
+const int MAX_K = 5;
+
+int matriceInput[MAX_N][MAX_M];
+int matriceOutput[MAX_N][MAX_M];
+int kernel[MAX_K][MAX_K];
+
 
 int valoareBordata(int i, int j) {
     if (i < 0) i = 0;
@@ -20,7 +25,7 @@ int valoareBordata(int i, int j) {
     if (j >= m) j = m - 1;
     return matriceInput[i][j];
 }
-//.\scriptC.ps1 matrice.exe 4 5
+
 void convolutie_worker(int linieStart, int linieEnd) {
     for (int i = linieStart; i < linieEnd; i++) {
         for (int j = 0; j < m; j++) {
@@ -94,17 +99,13 @@ void convolutie_paralela_vertical(int numarThreads) {
         th.join();
 }
 
-int main1(int argc, char* argv[]) {
+int main(int argc, char* argv[]) {
     ifstream fin("date.txt");
     if (!fin.is_open()) {
         cerr << "Eroare: nu pot deschide fisierul date.txt\n";
         return 1;
     }
     fin >> n >> m >> k;
-
-    matriceInput.assign(n, vector<int>(m));
-    matriceOutput.assign(n, vector<int>(m));
-    kernel.assign(k, vector<int>(k));
 
     for (int i = 0; i < n; i++)
         for (int j = 0; j < m; j++)
@@ -121,15 +122,15 @@ int main1(int argc, char* argv[]) {
     auto start = high_resolution_clock::now();
 
     //daca nr de thread-uri e 1 -> convolutie secventiala, altfel paralela
-    // if (p == 1)
-    //     convolutie_secventiala();
-    // else
-    //     convolutie_paralela(p);
-
     if (p == 1)
         convolutie_secventiala();
     else
-        convolutie_paralela_vertical(p);
+        convolutie_paralela(p);
+
+    // if (p == 1)
+    //     convolutie_secventiala();
+    // else
+    //     convolutie_paralela_vertical(p);
 
 
     auto end = high_resolution_clock::now();

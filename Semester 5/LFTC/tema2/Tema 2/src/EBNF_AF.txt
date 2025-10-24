@@ -6,14 +6,13 @@
 
 <alfabet>::="Σ" "=" "{" <lista_simboluri> "}"
 <lista_simboluri>::=<simbol> | <simbol> "," <lista_simboluri>
-<simbol>::=<caracter> 
+<simbol>::=<caracter>
 <caracter>::=orice simbol valid (litera,cifra,semn)
 
 <stare_initiala> ::= "q0" "=" <stare>
 
 <multime_finale>::="F" "=" "{" <lista_stari> "}"
 
-<tranzitii>::="δ" "=" <lista_tranzitii>
-<lista_tranzitii>::= <tranzitie> | <tranzitie> <lista_tranzitii>
-
-<tranzitie>::= <stare> "," <lista_simboluri> "->" <stare> 
+<tranzitii>::="δ" "=" <lista_tranzitii_pe_linii>
+<lista_tranzitii_pe_linii>::=<tranzitie> "\n" <lista_tranzitii_pe_linii> | <tranzitie>
+<tranzitie>::= <stare> "," <lista_simboluri> "->" <stare>
