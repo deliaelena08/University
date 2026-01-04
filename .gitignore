@@ -1,0 +1,44 @@
+# IntelliJ IDEA
+**/.idea/
+*/.iml
+**/out
+
+# Build system
+**/build/
+**/.gradle/
+**/gradle/
+**/classes/
+**/bin/
+**/obj/
+
+# Gradle wrapper
+**/gradlew
+**/gradlew.bat
+**/settings.gradle
+
+# Eclipse
+**/.classpath
+**/.project
+**/.settings/
+
+# Visual Studio
+**/.vs/
+**/*.csproj
+**/*.sln
+**/*.user
+
+output_*.txt
+date.txt
+
+*.exe
+*.o
+*.obj
+
+*.class
+*.jar
+
+.idea/
+.vscode/
+bin/
+build/
+target/

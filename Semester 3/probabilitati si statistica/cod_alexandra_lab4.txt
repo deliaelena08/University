@@ -1,0 +1,120 @@
+from scipy.stats import bernoulli, binom
+ from matplotlib.pyplot import bar, show, hist, grid, legend, xticks
+
+bernoulli.rvs(p=0.5, size=17)
+
+# 1). a.
+# RANDOM WALK
+
+#p=prob spre un nod din dreapta 
+#nr_pasi = nr de pais cu incepere in nodul 0
+def deplasare(nr_pasi, p):
+  poz_vizitate = [0] #incepe din 0
+  for _ in range(nr_pasi):
+    poz_vizitate.append(poz_vizitate[-1] + 2* bernoulli.rvs(p) -1)
+    # if bernoulli.rvs(p):
+    #   poz_vizitate.append(poz_vizitate[-1]+1)
+    # else:
+    #   poz_vizitate.append(poz_vizitate[-1]-1)
+
+  return poz_vizitate
+
+deplasare(10,0.5)
+
+# 1). b
+
+nr_pasi = 10
+p = 0.5
+N = 5000
+
+from random import randrange
+from matplotlib.pyplot import bar, hist, grid, show, legend
+
+data = [deplasare(nr_pasi, p)[-1] for _ in range(N)] #pozitiile finale din N=1000 de simulari ale deplasarii puricelui
+
+bin_edges = [k+0.5 for k in range(-nr_pasi-1, nr_pasi+1)]
+
+hist(data, bin_edges, density = True, rwidth = 0.9, color = 'green', edgecolor = 'black', alpha = 0.5, label = 'frecvente relative')
+
+# distribution = dict([(k, 1/6) for k in range (1,7)])
+# bar(distribution.keys(), distribution.values(),  width = 0.85, color = 'red', edgecolor = 'black', alpha= 0.6, label = 'probabilitati')
+
+legend(loc = 'upper left')
+# pentru 10 pasi nu are cum sa se opreasca intr un nr impar 
+xticks(range(-nr_pasi,nr_pasi+1, 2))
+grid()
+show()
+
+# Obs: am scris explicatiile pentru aceasta metoda
+
+nr_pasi = 10
+p = 0.5
+N = 5000
+
+from random import randrange
+from matplotlib.pyplot import bar, hist, grid, show, legend
+
+data = [deplasare(nr_pasi, p)[-1] for _ in range(N)] #pozitiile finale din N=1000 de simulari ale deplasarii puricelui
+
+bin_edges = [k+0.5 for k in range(-nr_pasi-1, nr_pasi+1)]
+
+hist(data, bin_edges, density = True, rwidth = 0.9, color = 'green', edgecolor = 'black', alpha = 0.5, label = 'frecvente relative')
+
+distribution = dict([(k, binom.pmf((nr_pasi+k)/2, n=nr_pasi,p=p)) for k in range (-nr_pasi, nr_pasi+1)])
+bar(distribution.keys(), distribution.values(),  width = 0.85, color = 'red', edgecolor = 'black', alpha= 0.6, label = 'probabilitati')
+
+legend(loc = 'upper left')
+# pentru 10 pasi nu are cum sa se opreasca intr un nr impar 
+xticks(range(-nr_pasi,nr_pasi+1, 2))
+grid()
+show()
+
+# 1). c
+nr_pasi = 10
+p = 0.5
+N = 5000
+n = 5 #nr de noduri pe cerc
+
+from random import randrange
+from matplotlib.pyplot import bar, hist, grid, show, legend
+
+data = [deplasare(nr_pasi, p)[-1]%n for _ in range(N)] #pozitiile finale din N=1000 de simulari ale deplasarii puricelui pe cerc
+
+bin_edges = [k+0.5 for k in range(-1, n)]
+
+hist(data, bin_edges, density = True, rwidth = 0.9, color = 'green', edgecolor = 'black', alpha = 0.5, label = 'frecvente relative')
+
+distribution_axa = dict([(k, binom.pmf((nr_pasi+k)/2, n=nr_pasi,p=p)) for k in range (-nr_pasi, nr_pasi+1)])
+distribution_cerc = dict([(k, 0) for k in range (n)])
+for k in distribution_axa.keys():
+  distribution_cerc[k%n]+=distribution_axa[k]
+bar(distribution_cerc.keys(), distribution_cerc.values(),  width = 0.85, color = 'red', edgecolor = 'black', alpha= 0.6, label = 'probabilitati')
+
+legend(loc = 'upper left')
+# pentru 10 pasi nu are cum sa se opreasca intr un nr impar 
+xticks(range(0,n))
+grid()
+show()
+
+
+from scipy.stats import hypergeom, geom
+
+# 2).
+# p = prob cel putin 3 bile albe din 6 exrageri fara repunere ditr o urna cu 43 negre + 6 albe => distributia hipergeometrica.
+
+p = sum([hypergeom.pmf(k,49,6,6) for k in [3,4,5,6]])
+print(p)
+
+#varianta 2
+p1 = 1 - hypergeom.cdf(2,49,6,6)
+print(p1)
+
+# 2). i)
+geom.rvs(p)
+
+# 2). ii)
+#rezultatul ne spune ca este probabilitatea sa nimerim bilet castigator dupa mai mult de 10 bilete 
+1-geom.cdf(9,p)
+
+
+

@@ -1,0 +1,38 @@
+Se da un fisier input.txt care contine n valori reale reprezentand un set de puncte
+x. Se considera ca numarul de procese p-1 divide n. Functia F(x) = A*(B*x + C*) + D este
+definita prin coeficientii A, B, C, D care sunt stocati intr-un fisier functie.txt.
+
+Sa se calculeze valorile functiei F(x) pentru fiecare punct din fisierul input.txt, iar
+rezultatele vor fi salvate intr-un fisier output.txt si maximul acestor valori se va afisa pe
+ecran.
+
+- Procesul 0 citeste coeficientii A, B, C, D din fisierul functie.txt si distribuie acesti
+coeficienti catre toate procesele folosind operatia de broadcast.
+curent=1;
+Repeta
+    o citeste n/(p-1) valori din fisierul input.txt si le stocheaza intr-un vector
+    "chunk";
+    o trimite datele din vectorul chunk catre procesul curent;
+    o curent++;
+Pana cand se termina de citit toate datele
+Repeta
+    o Primeste cate un chunk de valori F calculate de la fiecare proces cu id>0
+    o Scrie aceste valori in fisierul output
+Pana cand scrie toate valorile F in fisier
+
+- Fiecare proces cu id >0
+    o primeste valori de la procesul 0 coeficientii si valorile si calculeaza
+    valorile functiei F(x) pentru valorile primite si calculeaza si maximul
+    dintre valorile calculate.
+    o Trimite valorile calculate procesului 0
+    o Trimite valoarea maxima ultimului proces
+
+- Ultimul proces calculeaza minimul tuturor valorilor F si il afiseaza pe ecran.
+*(Nota: In cod am calculat MAXIMUL, deoarece cerinta are o contradictie intre introducere si final)*
+
+Caz testare 1)
+10 perechi de valori p =5
+
+Caz testare 2)
+Fisierul input contine 10.000 perechi de valori reale, toate in intervalul [0, 2]. Testati cu p
+= 4 , 8 ,16

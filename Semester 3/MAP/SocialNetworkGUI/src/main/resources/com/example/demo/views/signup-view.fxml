@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="520.0" prefWidth="667.0" stylesheets="@../css/signupstyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.SocialNetwork.Controller.SignUpController">
+    <VBox alignment="CENTER" spacing="20.0" prefWidth="300" prefHeight="400" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <Label text="Sign Up" styleClass="title-label"/>
+        <Label text="Sign Up here" styleClass="subtitle-label"/>
+
+        <VBox spacing="10.0" prefWidth="100">
+            <TextField fx:id="firstName" promptText="First name (ex.Mihai)" styleClass="input-field"/>
+            <TextField fx:id="lastName" promptText="Last name (ex.Cristian)" styleClass="input-field"/>
+            <TextField fx:id="textFieldEmail" promptText="Email (ex.miahicristi@yahoo.com)" styleClass="input-field"/>
+            <PasswordField fx:id="passwordField" promptText="Password (ex.mihai1234)" styleClass="input-field"/>
+            <PasswordField fx:id="confirmPasswordField" promptText="Confirm password" styleClass="input-field"/>
+        </VBox>
+
+        <Button fx:id="signupButton" text="Sign Up" onAction="#signupButtonClicked" styleClass="signup-button"/>
+    </VBox>
+</AnchorPane>

@@ -1,0 +1,19 @@
+Se consideră un fișier numbers.txt care conține N  numere întregi (un numarpe linie). Scrieți un program MPI care citește un număr natural X și pornește P procese care modifică fiecare numar în paralel conform funcției:
+f(numar,X):
+•	Dacă suma cifrelor din numar este mai mică decât X, numărul este înmulțit cu 2 (cazul 1).
+•	Dacă suma cifrelor din numar este mai mare sau egală cu X, numărul este împărțit la 2 (cazul 2).
+
+Cerințe
+Etapa 1:
+•	Procesul 0 citește valoarea X și toate numerele din fișierul numbers.txt, stocându-le într-un vector numbers.
+•	Procesul 0 transmite valoarea X prin MPI_Bcast tuturor proceselor.
+•	Procesul 0 distribuie datele in mod echitabil folosind MPI_Send către procese:
+o	Numerele de pe poziții pare din vector sunt distribuite către procesele cu ID-uri pare.
+o	Numerele de pe poziții impare din vector sunt distribuite
+către procesele cu ID-uri impare.
+Etapa 2:
+•	Fiecare proces primește X-ul si numerele asignate, le prelucrează conform funcției f(numar, X) și numără câte numere au fost procesate în cazul 1 (A) și câte în cazul 2 (B).
+•	Procesele trimit datele procesate și valorile lui A și B înapoi către procesul 0 folosind MPI_Recv.
+Etapa 3:
+•	Procesul 0 reconstruiește șirurile prelucrate, folosind datele primite, și le salvează în fișierul result.txt.
+•	Procesul 0 calculează și afișează totalul lui A și B pentru toate procesele.

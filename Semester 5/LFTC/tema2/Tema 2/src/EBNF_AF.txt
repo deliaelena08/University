@@ -1,0 +1,18 @@
+<automat>::= <multime_stari> <alfabet> <stare_initiala> <multime_finale> <tranzitii>
+
+<multime_stari>::="Q" "=" "{" <lista_stari> "}"
+<lista_stari>::=<stare> | <stare> "," <lista_stari>
+<stare>::="q" <numar>
+
+<alfabet>::="Σ" "=" "{" <lista_simboluri> "}"
+<lista_simboluri>::=<simbol> | <simbol> "," <lista_simboluri>
+<simbol>::=<caracter>
+<caracter>::=orice simbol valid (litera,cifra,semn)
+
+<stare_initiala> ::= "q0" "=" <stare>
+
+<multime_finale>::="F" "=" "{" <lista_stari> "}"
+
+<tranzitii>::="δ" "=" <lista_tranzitii_pe_linii>
+<lista_tranzitii_pe_linii>::=<tranzitie> "\n" <lista_tranzitii_pe_linii> | <tranzitie>
+<tranzitie>::= <stare> "," <lista_simboluri> "->" <stare>

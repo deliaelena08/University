@@ -1,0 +1,38 @@
+a. Unul dintre programe contine doua erori care sunt in acelasi timp erori in limbajul original (pentru care MLP defineste un subset)
+Limbajul ales: JAVA ( eroare de identificator necunoscut )
+
+main {
+float pi, aria, perimetru
+integer r
+read r
+pi <- 3.14159
+perimetru <-  2 * pi * r
+aria <-  pi * r ** 2
+write perimetru++
+write area
+}
+
+b.Al doilea program contine doua erori conform MLP, dar care nu sunt erori in limbajul original. 
+Se cere ca acesta sa fie compilat si executat in limbajul original ales.
+Limbajul ales: JAVA 
+
+public class Main {
+    public static void main(String[] args) {
+        int n = 5;
+        if (n > 0)
+            System.out.println(n);
+    }
+}
+
+atribuire & declarare nedefinita
+if fara acolade
+
+main {
+	integer n <- 5
+	if n > 0 
+		write n
+}
+
+
+a,b tema 2
+

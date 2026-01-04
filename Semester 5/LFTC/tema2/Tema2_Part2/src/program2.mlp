@@ -1,0 +1,23 @@
+main {
+    integer var1, _v$2
+    float PI_const <- 3.14159
+
+    integer dec1 <- 12345678
+    integer hex1 <- 0xFFUL
+    integer oct1 <- 077L
+    integer bin1 <- 0b1011
+    integer signed <- +99 - -10
+
+    float small <- 1.2E-5
+    float large <- 999.0e+10
+    float simple_dot <- 5.0
+
+    if (var1 > dec1) {
+        write "Conditie indeplinita" , 123456789
+    } else {
+        struct { integer a } s1
+        while (var1 < 10) {
+            var1 <- var1 + 1
+        }
+    }
+}

@@ -1,0 +1,6 @@
+﻿main{
+  integer x, y
+  read x
+  y <- x ** 2
+  write y
+}

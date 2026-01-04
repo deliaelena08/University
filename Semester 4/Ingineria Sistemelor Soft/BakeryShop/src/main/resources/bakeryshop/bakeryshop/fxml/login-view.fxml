@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="bakeryshop.bakeryshop.controllers.LoginController"
+            stylesheets="@../styles/style.css">
+    <VBox alignment="CENTER" spacing="15" styleClass="root-background"
+          AnchorPane.topAnchor="0.0"
+          AnchorPane.bottomAnchor="0.0"
+          AnchorPane.leftAnchor="0.0"
+          AnchorPane.rightAnchor="0.0">
+        <Label text="LOGIN NOW!" styleClass="title"/>
+        <TextField fx:id="usernameField" promptText="username"/>
+        <PasswordField fx:id="passwordField" promptText="********"/>
+        <Button text="Login" onAction="#handleLogin"/>
+        <Button text="Signup" onAction="#openSignupWindow"/>
+    </VBox>
+</AnchorPane>
+

@@ -1,0 +1,8 @@
+Set-Content numbers.txt "12 5 22 8 33 1 100 4" -Encoding Ascii
+mpiexec -n 4 MPI_Test.exe
+
+cd cmake-build-debug-visual-studio\Debug
+copy numbers.txt cmake-build-debug-visual-studio\Debug\
+
+Set-Content inputA.txt "2`r`n10`r`n1 2 3 4 5 6 7 8 9 10" -Encoding Ascii
+Set-Content inputB.txt "1`r`n10`r`n1 2 3 4 5 6 7 8 9 10" -Encoding Ascii

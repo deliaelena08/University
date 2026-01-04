@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            xmlns="http://javafx.com/javafx"
+            fx:controller="bakeryshop.bakeryshop.controllers.MenuManagerController"
+            stylesheets="@../styles/style.css"
+            prefWidth="500" prefHeight="500"
+            styleClass="root-background">
+
+    <VBox alignment="CENTER"
+          spacing="20"
+          AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0"
+          AnchorPane.topAnchor="50" AnchorPane.bottomAnchor="50">
+
+        <Label text="MENU" styleClass="menu-title"/>
+
+        <Button text="Manage Clients" onAction="#handleManageClients" styleClass="menu-button"/>
+        <Button text="Manage Products" onAction="#handleManageProducts" styleClass="menu-button"/>
+        <Button text="Manage Orders" onAction="#handleManageOrders" styleClass="menu-button"/>
+        <Button text="Logout" onAction="#handleLogout" styleClass="logout-button"/>
+
+    </VBox>
+</AnchorPane>

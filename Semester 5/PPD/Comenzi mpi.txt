@@ -1,0 +1,19 @@
+Comenzi ppd
+
+mpicc --version
+
+docker ps -a
+
+docker start -ai crazy_cray
+
+root@5beeb20ca440:/#
+
+docker run -it -v "C:\Users\tapuc\Desktop\University\Semester 5\PPD\mpi_labs:/labs" ubuntu bash
+
+cd /labs
+
+apt update
+apt install mpich -y
+
+
+exit

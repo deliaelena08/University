@@ -1,0 +1,71 @@
+film_list=[]
+client_list=[]
+class Film:
+    def __init__(self, id, title, description, type):
+        self.__list=[id,title,description,type]
+
+    def get_id(self):
+        return self.__list[0]
+
+    def get_title(self):
+        return self.__list[1]
+
+    def set_title(self, title):
+        self.__list[1] = title
+        
+    def get_all(self):
+        return self.__list
+
+    def get_description(self):
+        return self.__list[2]
+
+    def set_description(self, description):
+        self.__list[2] = description
+
+    def get_type(self):
+        return self.__list[3]
+
+    def set_type(self, type):
+        self.__list[3] = type
+
+    def __str__(self):
+        return "{Id: " + str(self.__list[0]) + ", Title: " + self.__list[1] + ", Destription: " + self.__list[2] + ", Type: " + self.__list[3]  + "}"
+
+
+class Client:
+    def __init__(self, id, name, cnp):
+        self.__list=[id,name,cnp]
+        self.__films = []
+
+    def get_id(self):
+        return self.__list[0]
+
+    def get_name(self):
+        return self.__list[1]
+
+    def set_name(self, name):
+        self.__list[1] = name
+
+    def get_cnp(self):
+        return self.__list[2]
+
+    def set_cnp(self, cnp):
+        self.__list[2]= cnp
+
+    def get_films(self):
+        return self.__films
+
+    def add_film(self, film):
+        self.__films.append(film)
+
+    def remove_film(self, film):
+        self.__films.remove(film)
+        
+    def get_all(self):
+        return self.__list
+
+    def __str__(self):
+        return "{Id: " + str(self.__list[0]) + ", Name: " + self.__list[1] + ", CNP: " + str(self.__list[2]) + ", Films: " + str([str(film) for film in self.__films]) + "}"
+
+
+

@@ -1,0 +1,8 @@
+AutomatFinit:
+	states: Set<String> /* tine cont de starile fiecarui atom */
+	alphabet: Set<String> /* alfabetul efinit in af */
+	startState: String /*  stare initiala */
+	finalStates: Set<String> /*starile finale */
+	transitions: Map<String, Map<String,String>> /* tranzitiile af */
+	
+	

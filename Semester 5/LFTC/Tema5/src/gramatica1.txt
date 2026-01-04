@@ -1,0 +1,8 @@
+E -> T E_prime
+E_prime -> + T E_prime
+E_prime -> EPSILON
+T -> F T_prime
+T_prime -> * F T_prime
+T_prime -> EPSILON
+F -> ( E )
+F -> id

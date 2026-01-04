@@ -1,0 +1,10 @@
+.\scriptJ.ps1 Main 16 10
+.\compare_matrices.ps1 output_seq_java.txt output_par_java.txt
+javac *.java
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+powershell -ExecutionPolicy Bypass -File "C:\Users\tapuc\Desktop\University\Semester 5\PPD\Tema 1 Java\src\scriptJ.ps1" Main 4 10
+
+
+.\scriptC.ps1 matrice_din.exe 1 10
+.\compareOutputs.ps1 output_seq_din.txt output_par_din.txt
+g++ -g -O2 -std=c++17 matrice_convolutionala_dinamic.cpp -o matrice_din.exe -static

@@ -1,0 +1,31 @@
+﻿Se consideră o lista care conține N numere întregi.
+
+Scrieți un program MPI cu P procese  care modifică fiecare număr  conform funcției:
+
+f(numar,X):
+Dacă suma cifrelor din numar este mai mică decât X, fiecare număr este înmulțit cu 2 (cazul 1).
+Dacă suma cifrelor din numar este mai mare sau egală cu X, fiecare număr este împărțit la 2 (cazul 2).
+
+
+PRECONDITIE: numarul N si p sunt numere pare.
+
+Cerințe
+
+Etapa 1:
+
+Procesul 0 citește datele din fișierul numbers.txt.
+Procesul 0 transmite prin Broadcast valoarea lui X catre toate celalalte procese.
+Procesul 0 distribuie datele (cele N numere)  în mod echitabil către celelalte procese astfel:
+Numerele de pe poziții pare din vector sunt distribuite către procesele cu ID-uri pare.
+Numerele de pe poziții impare din vector sunt distribuite către procesele cu ID-uri impare.
+
+Etapa 2:
+
+Fiecare proces prelucrează numerele asignate conform funcției f(numar, X) și calculează:
+Numărul total de elemente prelucrate în cazul 1 (A).
+Numărul total de elemente prelucrate în cazul 2 (B).
+
+Etapa 3:
+
+Procesul id=0 construiește vectorul complet cu numerele modificate, folosind date primite de la celelalte procese, și îl scrie în fișierul result.txt.
+Procesul id=1 calculează și afișează totalul lui A și B pentru toate procesele.

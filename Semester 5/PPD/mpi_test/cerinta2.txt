@@ -1,0 +1,28 @@
+﻿Verificat
+
+Se considera doua fisiere “inputA.txt” si “inputB.txt” care contin pe prima pozitia o valoare numar natural  (a in inputA.txt si b in inputB.txt) numarul n si apoi  n valori numere reale.
+Se cere sa se calculeze valoarea S= ((a_i^a)*(b_i^b)), 0<= i < n.
+Cerinte:
+-	Se creeaza M>2 , (M =2*N) procese! Se considera ca N divide n.
+Etapa 1
+-	procesul 0 citeste toate numerele din fisierul“inputA.txt” si le stocheaza in variabila a si intr-un vector cu nume “dateA”.;
+-	Procesul 0  trimite valoarea a tuturor proceselor pare.
+-	procesul 0 distribuie parti  egale din vectorul “dateA” astfel incat fiecare proces par contine un vector “segmentA” cu parti din vectorul “dateA” (inclusiv procesul0);
+
+-	procesul 1 citeste toate numerele din fisierul“inputB.txt” si le stocheaza in variabila b si intr-un vector cu nume “dateB”(inclusiv procesul 1) ;
+-	Procesul 1 trimite valoarea b tuturor proceselor impare.
+-	procesul 1 distribuie parti egale din vectorul “dateB” astfel incat fiecare proces impar contine un vector “segmentB” cu parti din vectorul “dateB”;
+Etapa 3
+-Fiecare proces calculeaza puterea elementelor din vectorul “segment?” (?=A sau ? =B) corespunzator (a_i^a sau b_i^b).
+- procesele impare transmit proceselor pare segmentul lor
+- procesele pare calculeaza suma partiala S pentru elementele corespunzatoare din “segmentA “si  “segmentB”
+-procesele pare cu id>0 trimit procesului 0 valorile sumelor lor;
+-procesul 0 calculeaza suma totala si o afiseaza.
+
+Test 1
+N=2;  n=10; [1,2, 3, 4, 5, 6, 7, 8, 9,10]
+a=2; b=1
+Test 2
+N=4; n=100
+a=5; b=7
+

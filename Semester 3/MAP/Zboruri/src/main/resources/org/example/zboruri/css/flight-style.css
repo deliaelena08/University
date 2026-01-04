@@ -1,0 +1,79 @@
+/* General Header Label Styling */
+.header-label {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #34495e;
+    -fx-padding: 10px;
+    -fx-alignment: center;
+}
+
+/* Combobox and DatePicker Styling */
+.combo-box, .date-picker {
+    -fx-padding: 10px;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 2px;
+    -fx-border-radius: 10px;
+    -fx-background-color: #ecf0f1;
+    -fx-font-size: 14px;
+    -fx-font-family: 'Segoe UI', sans-serif;
+    -fx-prompt-text-fill: #95a5a6;
+    -fx-text-fill: #2c3e50;
+}
+
+/* TableView Styling */
+.table-view {
+    -fx-border-color: #95a5a6;
+    -fx-border-radius: 10px;
+    -fx-background-color: #ffffff;
+    -fx-font-size: 14px;
+    -fx-font-family: 'Segoe UI', sans-serif;
+    -fx-table-cell-border-color: transparent;
+    -fx-table-header-border-color: #dcdcdc;
+}
+
+/* Table Column Styling */
+.table-column {
+    -fx-alignment: CENTER;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+    -fx-padding: 10px;
+}
+
+/* Table Header Styling */
+.table-view .column-header {
+    -fx-background-color: linear-gradient(to bottom, #bdc3c7, #ecf0f1);
+    -fx-border-color: transparent;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #34495e;
+}
+
+/* Table Row Hover Effect */
+.table-row-cell:hover {
+    -fx-background-color: #f2f2f2;
+}
+
+/* Highlight Selected Row */
+.table-row-cell:selected {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}
+
+/* Buttons Styling */
+.button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-padding: 10px 15px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+.button:hover {
+    -fx-background-color: #2980b9;
+}
+
+.button:pressed {
+    -fx-background-color: #1f618d;
+}

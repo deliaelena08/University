@@ -1,0 +1,9 @@
+Mod,Total Threads (P),Reader Threads (Pr),Timp Mediu (ms)
+Secvential,1,1,6.65E-05
+Secvential,1,1,62.2573
+Paralel,4,1,47.76001
+Paralel,8,1,53.61774
+Paralel,16,1,51.36583
+Paralel,16,2,38.72993
+Paralel,8,2,62.85914
+Paralel,4,2,55.82956

@@ -1,0 +1,9 @@
+main {
+    integer var1, _v$2;
+    float pi <- 3.14159;
+    integer x <- 42;
+    write var1;
+    if (pi > 0) {
+        x <- x + 1;
+    }
+}

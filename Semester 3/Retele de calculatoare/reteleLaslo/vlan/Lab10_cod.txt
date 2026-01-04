@@ -1,0 +1,109 @@
+Pentru conectare:
+PC → Switch L2 = "Copper Straight-Through"
+Switch L2 → Switch L2 = "Copper Cross-Over"
+Switch L2 → Switch L3 = "Copper Straight-Through"
+
+Pc1:
+IP:  192.168.10.2
+Subnet mask: 255.255.255.0
+Gateway: 192.168.10.1
+
+Pc2:
+IP: 192.168.20.2
+Subnet mask: 255.255.255.0
+Gateway: 192.168.20.1
+
+Pc3:
+IP:  192.168.10.3
+Subnet mask: 255.255.255.0
+Gateway: 192.168.10.1
+
+Pc4:
+IP: 192.168.20.3
+Subnet mask: 255.255.255.0
+Gateway: 192.168.20.1
+
+Switch1:
+enable
+configure terminal
+vlan 10
+name WLAN10
+exit
+interface range fa0/1
+switchport mode access
+switchport access vlan 10
+exit
+-port trunk către Switch-ul L3
+interface fa0/24
+switchport mode trunk
+switchport trunk allowed vlan 10
+exit
+
+Switch2:
+enable
+configure terminal
+vlan 10
+name WLAN10
+exit
+interface range fa0/2
+switchport mode access
+switchport access vlan 10
+exit
+-port trunk către Switch-ul L3
+interface fa0/24
+switchport mode trunk
+switchport trunk allowed vlan 10
+exit
+
+Switch3:
+enable
+configure terminal
+vlan 20
+name WLAN20
+exit
+interface range fa0/3
+switchport mode access
+switchport access vlan 20
+exit
+-port trunk către Switch-ul L3
+interface fa0/24
+switchport mode trunk
+switchport trunk allowed vlan 20
+exit
+
+
+Switch4:
+enable
+configure terminal
+vlan 20
+name WLAN20
+exit
+interface range fa0/4
+switchport mode access
+switchport access vlan 20
+exit
+-port trunk către Switch-ul L3
+interface fa0/24
+switchport mode trunk
+switchport trunk allowed vlan 20
+exit
+
+
+
+
+Switch L3:
+-Activează rutarea 
+enable
+configure terminal
+ip routing
+-Vlan10
+enable
+configure terminal
+ip routing
+-Vlan20
+interface vlan 20
+ip address 192.168.20.1 255.255.255.0
+no shutdown
+exit
+
+

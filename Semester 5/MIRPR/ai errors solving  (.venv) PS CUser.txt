@@ -1,0 +1,15 @@
+ai errors solving: 
+Daca nu merge cu python incercati cu py
+Daca dati de eroarea: 
+pip : The term 'pip' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ pip install -r requirements.txt
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (pip:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+Rulati:
+C:\Users\tapuc\Desktop\DigitalTriage> py -3.11 -m venv .venv
+C:\Users\tapuc\Desktop\DigitalTriage> .venv\Scripts\Activate.ps1
+C:\Users\tapuc\Desktop\DigitalTriage> pip install -r requirements.txt

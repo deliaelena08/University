@@ -1,0 +1,23 @@
+%intercaleaza(L:list,N:integer,Rez:list)
+intercaleazaEl([],_,_,[]):-!.
+intercaleazaEl([H|T],El,1,[El,H|Rez]):-
+	intercaleazaEl(T,El,0,Rez).
+intercaleazaEl([H|T],El,N,[H|Rez]):-
+	N \=1,
+	N1 is N-1,
+	intercaleazaEl(T,El,N1,Rez).
+
+%cmmdc(Nr1:integer,Nr2:integer,Rez:integer)(i,i,o)
+cmmdc(Nr1,Nr1,Nr1):-!.
+cmmdc(Nr1,Nr2,Rez):-
+	Nr1>Nr2,!,
+	Dif is Nr1-Nr2,
+	cmmdc(Nr2,Dif,Rez).
+cmmdc(Nr1,Nr2,Rez):-
+	Dif is Nr2-Nr1,
+	cmmdc(Nr1,Dif,Rez).
+
+cmmdcLista([El],El):-!.
+cmmdcLista([H|T],Rez):-
+	cmmdcLista(T,Rez1),
+	cmmdc(H,Rez1,Rez).

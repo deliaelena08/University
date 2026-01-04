@@ -1,0 +1,8 @@
+﻿main {
+  integer xxxxxxxx123
+  read x
+  y <- x ** 2
+  z <- 5$
+  write y
+  @
+}

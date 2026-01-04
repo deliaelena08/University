@@ -1,0 +1,18 @@
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      stylesheets="@../styles/styles.css"
+      alignment="CENTER" spacing="10.0" fx:controller="org.example.taximetrie.controllers.SoferController"
+        >
+    <ListView fx:id="clientsList" />
+    <DatePicker fx:id="datePicker" onAction="#viewOrdersForDate" />
+    <Label fx:id="averageOrdersLabel" />
+    <Label fx:id="mostLoyalClientLabel" />
+    <VBox spacing="10.0" alignment="CENTER" prefWidth="40.0">
+    <Button text="Acceptă Comanda" onAction="#acceptOrder" styleClass="confirm-button"/>
+    <Button text="Refuză Comanda" onAction="#rejectOrder" styleClass="reject-button"/>
+    </VBox>
+</VBox>

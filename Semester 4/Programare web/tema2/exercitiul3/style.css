@@ -1,0 +1,60 @@
+body{
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	font-family: Arial,sans-serif;
+	margin:0;
+	padding:0;
+}
+#Header{
+	background-color: red;
+	color: white;
+	text-align: center;
+	font-size: 24px;
+	font-weight: bold;
+	height: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#Menu {
+	background-color: yellow;
+	height: 25px;
+	display: flex;
+	justify-content :center;
+	align-items: center;
+}
+
+#Menu ul{
+	display: flex;
+	list-style-type:none;
+}
+
+#Menu li{
+	margin:0 10px;
+}
+
+#Menu a{
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+}
+
+#MainView{
+	background-color:green;
+	flex-grow: 1;
+	padding: 20px;
+	color:white;
+	min-height:calc(100vh-185px);
+}
+
+#Footer{
+    background-color: pink;
+    color: black;
+    text-align: center;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

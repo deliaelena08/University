@@ -1,0 +1,21 @@
+[2024-03-19 18:34:37] [info] Start Program:
+Path:"C:\Users\tapuc\source\repos\lab2_4\x64\Debug\lab2_4.exe"
+Arguments:
+Working directory: "C:\Users\tapuc\source\repos\lab2_4\lab2_4\"
+Modules: Selected: C:\Users\tapuc\source\repos\lab2_4\x64\Debug\lab2_4.exe Excluded: 
+Sources: Selected: C:\Users\tapuc\source\repos\lab2_4\lab2_4 Excluded: 
+Log Level: Normal
+Cover Children: 0
+Aggregate by file: 1
+Continue after C++ exception: 0
+Optimized build support: 0
+Export: Binary C:\Users\tapuc\AppData\Local\Temp\uyovtyz1.0hw 
+Input coverage: 
+Unified diff: 
+Excluded line regular expressions: 
+Substitute pdb source paths: 
+
+[2024-03-19 18:34:37] [info] Module: C:\Users\tapuc\source\repos\lab2_4\x64\Debug\lab2_4.exe is selected because it matches selected pattern: C:\Users\tapuc\source\repos\lab2_4\x64\Debug\lab2_4.exe
+[2024-03-19 18:34:37] [info] ----------------------------------------------------
+[2024-03-19 18:34:37] [info] Coverage binary generated in file: C:\Users\tapuc\AppData\Local\Temp\uyovtyz1.0hw
+[2024-03-19 18:34:37] [info] ----------------------------------------------------

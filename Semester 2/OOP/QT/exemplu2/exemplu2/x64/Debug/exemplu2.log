@@ -1,0 +1,3 @@
+﻿  Service.cpp
+C:\Users\tapuc\source\repos\exemplu2\exemplu2\Service.cpp(14): warning C4715: 'Service::getMelody': not all control paths return a value
+  exemplu2.vcxproj -> C:\Users\tapuc\source\repos\exemplu2\x64\Debug\exemplu2.exe

@@ -1,0 +1,16 @@
+%cmmdc_test(Nr1:Integer,Nr2:Integee,Rez:Integer)(i,i,o)
+cmmdc_test(Nr1,0,Nr1):-!.
+cmmdc_test(Nr1,Nr2,Rez):-
+	Rest is Nr1 mod Nr2,
+	cmmdc_test(Nr2,Rest,Rez).
+
+%cmmmc_test(Nr1:Integer,Nr2:Integer,Rez:integer)(i,i,o)
+cmmmc_test(Nr1,Nr2,Rez):-
+	cmmdc_test(Nr1,Nr2,Div),
+	Rez is abs(Nr1*Nr2)//Div.
+
+%cmmmc_lista(L:list,Rez:Integer)(i,o)
+cmmmc_lista([],1):-!.
+cmmmc_lista([H|T],Rez):-
+	cmmmc_lista(T,Rez1),
+	cmmmc_test(H,Rez1,Rez).

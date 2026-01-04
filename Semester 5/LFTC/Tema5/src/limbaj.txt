@@ -1,0 +1,45 @@
+program -> KW_MAIN { instructions }
+instructions -> instruction instructions
+instructions -> EPSILON
+instruction -> declaration
+instruction -> io
+instruction -> atribution
+instruction -> conditional_instr
+instruction -> repetitional_instr
+declaration -> type list_id
+type -> integer
+type -> float
+type -> char
+type -> string
+type -> bool
+type -> struct_def
+struct_def -> struct { instructions }
+list_id -> ID list_id_prime
+list_id_prime -> , ID list_id_prime
+list_id_prime -> EPSILON
+io -> read list_id
+io -> write list_id
+atribution -> ID <- expression
+expression -> operand expression_prime
+expression_prime -> operant operand expression_prime
+expression_prime -> EPSILON
+operand -> ID
+operand -> CONST
+operant -> +
+operant -> -
+operant -> /
+operant -> %
+operant -> *
+operant -> **
+conditional_instr -> if conditions { instructions } conditional_end
+conditional_end -> else { instructions }
+conditional_end -> EPSILON
+conditions -> operand conditions_prime
+conditions_prime -> comparison operand
+conditions_prime -> EPSILON
+comparison -> >
+comparison -> <
+comparison -> =/
+comparison -> =
+comparison -> !
+repetitional_instr -> while conditions { instructions }

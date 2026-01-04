@@ -1,0 +1,15 @@
+﻿  MDO.cpp
+  IteratorMDO.cpp
+C:\Users\tapuc\Downloads\OneDrive_2024-05-08\TAD MultiDictionar Ordonat\Proiect C++\MDO.cpp(14,10): error C2039: 'd': is not a member of 'MDO'
+  C:\Users\tapuc\Downloads\OneDrive_2024-05-08\TAD MultiDictionar Ordonat\Proiect C++\MDO.h(17,7):
+  see declaration of 'MDO'
+  
+C:\Users\tapuc\Downloads\OneDrive_2024-05-08\TAD MultiDictionar Ordonat\Proiect C++\MDO.cpp(15,2): error C2561: 'd': function must return a value
+  C:\Users\tapuc\Downloads\OneDrive_2024-05-08\TAD MultiDictionar Ordonat\Proiect C++\MDO.cpp(14,10):
+  see declaration of 'd'
+  
+  TestExtins.cpp
+C:\Users\tapuc\source\repos\SDA_tabela\SDA_tabela\TestExtins.cpp(119,8): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\tapuc\source\repos\SDA_tabela\SDA_tabela\TestExtins.cpp(137,8): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  TestScurt.cpp
+  Generating Code...

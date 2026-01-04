@@ -1,0 +1,9 @@
+Vn={S,A,B}
+Vt={a,b,r}
+S=S
+P
+S -> aS
+S -> aSr
+S -> b
+A -> bA
+B -> b

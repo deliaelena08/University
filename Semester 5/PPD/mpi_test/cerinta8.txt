@@ -1,0 +1,22 @@
+Verificat
+Se considera un fisier “input.txt” care contine n numere reale (pe prima nie numarul n).
+Se da polinomul P de gradul n cu coeficientii  a0, a1,a2,a3,…, aN, (a0 este coeficientul elementului de grad maxim) in fisierul “polinom.txt” Se cere sa se calculeze valorile polinomului in punctele citite din fisierul “input.txt”. Valorile vor fi salvate in fisierul “output.txt”.
+Cerinte:
+-	Se creeaza N+1 procese!
+-	Se foloseste schema lui Horner de calculare a valorii polinomului intr-un punct: P(x)=(…(a0*x+a1)*x+…+a(N-1)*x)+aN
+Etapa 1:
+-	procesul 0 citeste coeficientii polinomului din fisierul “polinom.txt”;
+-	procesul 0 distribuie procesului 1 valoarea a1, procesului 2 valoarea a2, ...procesului N valoarea aN.
+Etapa 2 :
+ Se repeta urmatoarele operatii pana cand se termina valorile din fisierul “input.txt”
+a.	procesul 0 citeste urmatoarea valoare (x) din fisier si o trimite prin brodcast celorlalte;
+b.	fiecare proces cu id >0 primeste o valoare v de la procesul precedent; daca id=0 atunci v=a0 (procesul 0 nu primeste valoare v);
+c.	fiecare proces cu id>0 inmulteste valoarea primita v cu x si aduna coeficientul distribuit lui la  rezultat; (v=v*x+aid)
+d.	fiecare proces trimite valoarea calculata la procesul urmator (procesul cu id cu o unitate mai mare) daca acesta exista, sau scrie valoarea in fisierul “output.txt” daca este ultimul proces.
+
+Cazuri de testare
+1)
+N=3 si n=4;  a0=1 a1=2, a2=3, a3=4, X=1, 10,100,1000
+Rezultate: 10,1234,1020304,1002003004
+
+2) N=7 cu a0=1 a1=2, a2=3, a3=4  a4=5 a5=6 a6=7 a7=8 si n=100 cu valori generate random pentru x (0<x<100)

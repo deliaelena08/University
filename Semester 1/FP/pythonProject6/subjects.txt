@@ -1,0 +1,4 @@
+2,Limba romana,Zaharescu Mihaela
+4,Chimie,Belciuc Oana
+5,Informatica,Tepes Alexandru
+1,mate,maria

@@ -1,0 +1,6 @@
+﻿cattimp i > 1 executa
+  integer x, y
+  read x
+  y <- x ** 2
+  write y
+sfcattimp

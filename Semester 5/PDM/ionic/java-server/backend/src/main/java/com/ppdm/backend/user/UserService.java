@@ -1,0 +1,125 @@
+package com.ppdm.backend.user;
+
+import com.ppdm.backend.security.controller.LoginRequest;
+import com.ppdm.backend.user.dto.UserDto;
+import com.ppdm.backend.user.dto.UserUpdateDto;
+import com.ppdm.backend.user.exception.InvalidUserException;
+import com.ppdm.backend.user.exception.LoginFaildException;
+import com.ppdm.backend.user.exception.UserAlreadyExistException;
+import com.ppdm.backend.user.exception.UserNotFoundException;
+import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
+import org.springframework.stereotype.Service;
+
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Map;
+
+@Service
+@RequiredArgsConstructor
+public class UserService {
+    private final UserRepository userRepository;
+    private final UserMapper mapper;
+    private final SimpMessagingTemplate simpMessagingTemplate;
+
+    public UserDto findUserById(Long id) {
+        UserEntity user = userRepository.findById(id).orElseThrow(UserNotFoundException::new);
+        return mapper.entityToDto(user);
+    }
+
+    public List<UserDto> findAllUsers(int page, int size) {
+        return mapper.entityToDto(userRepository.findAll(
+                PageRequest.of(page, size)
+        ).getContent());
+    }
+
+
+    public UserDto saveUser(UserDto userDto) {
+        UserEntity user = mapper.dtoToEntity(userDto);
+        if (userRepository.existsByUsername(user.getUsername())) {
+            throw new UserAlreadyExistException();
+        }
+        user.setLastActive(LocalDateTime.now());
+        UserEntity saved = userRepository.save(user);
+
+        Map<String, Object> message = Map.of(
+                "type", "CREATE",
+                "payload", mapper.entityToDto(saved)
+        );
+        simpMessagingTemplate.convertAndSend("/ws/users", message);
+
+        return mapper.entityToDto(saved);
+    }
+
+
+    public UserDto updateUser(Long id, UserUpdateDto userDto) {
+        UserEntity user = userRepository.findById(id).orElseThrow(UserNotFoundException::new);
+
+        boolean emailChanged = !user.getUsername().equals(userDto.getUsername());
+
+        user.setUsername(userDto.getUsername());
+        user.setLastActive(LocalDateTime.now());
+        user.setActive(user.getActive());
+
+        if (emailChanged && userRepository.existsByUsername(user.getUsername())) {
+            throw new InvalidUserException("Username already exists!");
+        }
+
+        UserEntity updatedEntity = userRepository.save(user);
+        Map<String, Object> message = Map.of(
+                "type", "UPDATE",
+                "payload", mapper.entityToDto(updatedEntity)
+        );
+        simpMessagingTemplate.convertAndSend("/ws/users", message);
+        return mapper.entityToDto(updatedEntity);
+    }
+
+    public void deleteUser(Long id) {
+        if (!userRepository.existsById(id)) {
+            throw new UserNotFoundException();
+        }
+        userRepository.deleteById(id);
+    }
+
+    public UserDto login(LoginRequest request) {
+        UserEntity user = userRepository.findByUsername(request.getUsername());
+        if (user == null) {
+            throw new LoginFaildException("There is no user with the email: " + request.getUsername());
+        }
+        if (!request.getPassword().equals(user.getPassword())) {
+            throw new LoginFaildException("Wrong password");
+        }
+
+        user.setLastActive(LocalDateTime.now());
+        user.setActive(true);
+        UserEntity saved = userRepository.save(user);
+
+        Map<String, Object> message = Map.of(
+                "type", "UPDATE",
+                "payload", mapper.entityToDto(saved)
+        );
+        simpMessagingTemplate.convertAndSend("/ws/users", message);
+        return mapper.entityToDto(saved);
+    }
+
+
+    public void setUserInactive(Long id) {
+        var user = userRepository.findById(id).orElseThrow(UserNotFoundException::new);
+        if (user != null) {
+            user.setActive(false);
+            user.setLastActive(LocalDateTime.now());
+            UserEntity updatedEntity = userRepository.save(user);
+
+            Map<String, Object> message = Map.of(
+                    "type", "UPDATE",
+                    "payload", mapper.entityToDto(updatedEntity)
+            );
+            simpMessagingTemplate.convertAndSend("/ws/users", message);
+        }
+    }
+
+
+
+}

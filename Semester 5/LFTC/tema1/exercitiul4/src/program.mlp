@@ -1,0 +1,13 @@
+main {
+integer n, i, s, x
+read n
+@
+s <- 0
+i <- 0
+while i < n {
+    read x
+    s <- s + x
+    i <- i + 1
+}
+write s
+}

@@ -1,0 +1,29 @@
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.Button?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml" stylesheets="@../styles/style.css" fx:controller="bakeryshop.bakeryshop.controllers.ManageOrdersController" styleClass="root-background">
+    <VBox spacing="15" alignment="CENTER" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.bottomAnchor="10">
+        <Label text="Orders" style="-fx-font-size: 18px;" />
+        <TableView fx:id="tableOrders" prefHeight="200">
+            <columns>
+                <TableColumn fx:id="columnOrderId" text="Order ID"  />
+                <TableColumn fx:id="columnClientId" text="Client ID" />
+                <TableColumn fx:id="columnOrderDate" text="Order Date" prefWidth="150" />
+                <TableColumn fx:id="columnTotalPrice" text="Total Price" />
+            </columns>
+        </TableView>
+
+        <Label text="Order Details" style="-fx-font-size: 18px;" />
+        <TableView fx:id="tableOrderItems" prefHeight="200">
+            <columns>
+                <TableColumn fx:id="columnCakeName" text="Cake Name" prefWidth="250"/>
+                <TableColumn fx:id="columnQuantity" text="Quantity" />
+            </columns>
+        </TableView>
+
+        <Button fx:id="backButton" text="Back" onAction="#handleBack" />
+    </VBox>
+</AnchorPane>

@@ -1,0 +1,23 @@
+Se considera un fisier “input.txt” care contine n numere reale. Se considera ca numarul de procese p divide n. 
+Se da polinomul P cu coeficientii  a0, a1,a2,a3,…, aN,  in fisierul “polinom.txt”. Se cere sa se calculeze valorile polinomului in punctele citite din fisierul “input.txt”. Valorile vor fi salvate in fisierul “output.txt”. 
+Cerinte:  
+Etapa 1: 
+	•	procesul 0 citeste coeficientii polinomului din fisierul “polinom.txt”; 
+	•	procesul 0 distribuie prin broadcast coeficientii polinomului. 
+	•	procesul 0 citeste toate numerele din fisierul“input.txt” si le stocheaza intr-un vector cu nume “date”.; 
+	•	procesul 0 distribuie parti egale din vectorul “input” astfel incat fiecare process contine un vector “segment” cu parti din vectorul “date”; 
+Etapa 2: 
+	•	fiecare proces calculeaza valorile polinomului in punctele din propriul vector “segment”; 
+	•	procesul 0 primeste de la fiecare proces valorile calculate; 
+Etapa 3: 
+	•	procesul 0 scrie rezultatul in fisierul “output.txt”. 
+ 
+Test case 1) 
+N=3 si n=4; p=2 
+a0=1 a1=2, a2=3, a3=4,  
+Input.txt: 1, 10,100,1000 
+Output.txt: 10,1234,1020304,1002003004 
+ 
+Test case 2) 
+Valori generate random 
+n=1000 si N=50 si p=10

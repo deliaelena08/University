@@ -1,0 +1,10 @@
+part1:
+id + id
+( id + id
+* id
+( id + id ) * id
+
+part2:
+KW_MAIN { integer ID , ID , ID read ID , ID while ID > CONST { ID <- ID % ID ID <- ID ID <- ID } write ID }
+KW_MAIN { integer ID
+KW_MAIN { integer ID ID }

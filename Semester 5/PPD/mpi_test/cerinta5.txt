@@ -1,0 +1,29 @@
+S1
+
+Lucrezi cu un sistem distribuit pentru analiza datelor de temperatura
+colectate de la senzori amplasati in diferite regiuni ale unui oras. Fiecare senzor
+raporteaza temperatura medie zilnica pentru o perioada specifica.
+
+- Datele sunt stocate intr-un fisier care este citit de procesul root
+- Fiecare linie a fisierului contine un ID de cartier si o valoare a
+temperaturii (exemplu: 1 24.5). Datele sunt generate random.
+- Procesul root distribuie in mod balansat datele intre toate procesele
+- Fiecare proces calculeaza media temperaturilor pentru fiecare cartier si
+suma temperaturilor pentru datele locale
+- Fiecare proces trimite catre procesul root urmatoarele: media
+temperaturilor pentru cartierele procesate, suma temperaturilor pentru
+datele locale
+- Procesul root calculeaza: media temperaturilor pentru fiecare cartier, pe
+baza mediilor primite de la toate procesele si temperatura medie pentru
+intregul oras
+- Afisati temperatura medie pentru fiecare cartier si temperatura pentru
+intregul oras
+
+Caz de testare:
+
+Caz testare 1)
+3 cartiere cu cate 5 temperaturi fiecare
+
+Caz testare 2)
+Generati un fisier random cu 17 cartiere iar pentru fiecare cartier
+generate 59 de temperaturi intre 10 si 30. Testati cu 4 , 8 si 16 procese.

@@ -1,0 +1,41 @@
+2.
+a.Aria si Perimetrul cercului cu o raza data
+
+main {
+float pi, aria, perimetru
+integer r
+read r
+pi <- 3.14159
+perimetru <-  2 * pi * r 
+aria <-  pi * r ** 2
+write perimetru
+write aria
+}
+
+b.CCMDC a doua numere cititte de la tastatura
+
+main {
+integer a, b, r
+read a, b
+while b > 0 {
+    r <- a % b
+    a <- b
+    b <- r
+}
+write a
+}
+
+c.suma a n numere citite de la tastatura
+
+main {
+integer n, i, s, x
+s <- 0
+read n
+i <- 1
+while i <= n {
+    read x
+    s <- s + x
+    i <- i + 1
+}
+write s
+}
