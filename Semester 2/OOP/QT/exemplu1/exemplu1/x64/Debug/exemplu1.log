@@ -1,8 +1,0 @@
-﻿  main.cpp
-C:\Users\tapuc\source\repos\exemplu1\exemplu1\Ui.h(68,48): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-  (compiling source file 'main.cpp')
-  
-C:\Users\tapuc\source\repos\exemplu1\exemplu1\Ui.h(72,24): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  (compiling source file 'main.cpp')
-  
-  exemplu1.vcxproj -> C:\Users\tapuc\source\repos\exemplu1\x64\Debug\exemplu1.exe

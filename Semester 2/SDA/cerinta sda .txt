@@ -1,1 +1,0 @@
-lab2.Multidictionar-reprezentarea sub forma unuei liste dublu inlantuite in care apar toate perechiile de forma <Tcheie,Tvaloare> .O cheie poate aparea in vector de mai multe ori

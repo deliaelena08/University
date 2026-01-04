@@ -1,3 +1,0 @@
-C:/Users/tapuc/CLionProjects/SDA_tabeladisp/cmake-build-debug/CMakeFiles/SDA_tabeladisp.dir
-C:/Users/tapuc/CLionProjects/SDA_tabeladisp/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/tapuc/CLionProjects/SDA_tabeladisp/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,5 +1,0 @@
-AZURE
-KEY:
-8wbb5OMsywgufvlRU2IuoxkgPsFjlVT8FLdi0ufkDydu9ELYpXRaJQQJ99BCAC5RqLJXJ3w3AAAFACOG6dIW
-ENDPOINT:
-https://tapucdelia.cognitiveservices.azure.com/

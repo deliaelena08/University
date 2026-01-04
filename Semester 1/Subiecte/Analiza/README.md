@@ -1,2 +1,0 @@
-# Analiza cu berimde
-L

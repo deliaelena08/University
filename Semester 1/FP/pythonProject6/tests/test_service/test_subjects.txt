@@ -1,4 +1,0 @@
-1,Matematica,Luminita Cozma
-2,Fizica,Stroia Calin
-3,Istorie,Lostun Mihai
-4,Geografie,Preisler Octavian

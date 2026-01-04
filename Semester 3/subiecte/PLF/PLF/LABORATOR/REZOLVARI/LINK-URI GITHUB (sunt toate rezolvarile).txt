@@ -1,3 +1,0 @@
-https://github.com/Radu-Florian-Sava/PLF/tree/fb992b919fb9490f480db60c095fbf0745e23445
-https://github.com/Pufcorina/Functional-and-Logic-Programming
-https://github.com/AlexandraBledea/Sem3-PFL

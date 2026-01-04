@@ -1,8 +1,0 @@
-﻿  main.cpp
-C:\Users\tapuc\source\repos\Qt_1\Qt_1\Abstract.h(33,23): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
-  (compiling source file 'main.cpp')
-  
-C:\Users\tapuc\source\repos\Qt_1\Qt_1\Interfata_GUI.h(410,47): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-  (compiling source file 'main.cpp')
-  
-  Qt_1.vcxproj -> C:\Users\tapuc\source\repos\Qt_1\x64\Debug\Qt_1.exe

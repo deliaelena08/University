@@ -1,8 +1,0 @@
-Maratei 50m^2 10000
-Muresan 500m^2 50000
-Agavei 250m^2 70000
-Campus 180m^2 52000
-Muncii 100m^2 100000
-Titulescu 80m^2 99999
-Vrabioarei 34m^2 5000
-Constantin 120m^2 80000

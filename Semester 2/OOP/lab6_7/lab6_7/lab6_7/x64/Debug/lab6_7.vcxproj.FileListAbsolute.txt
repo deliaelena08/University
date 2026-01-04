@@ -1,2 +1,0 @@
-C:\Users\tapuc\source\repos\lab6_7\x64\Debug\lab6_7.exe.lastcodeanalysissucceeded
-C:\Users\tapuc\source\repos\lab6_7\lab6_7\x64\Debug\NativeCodeAnalysis.read.1.tlog

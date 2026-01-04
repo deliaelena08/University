@@ -1,3 +1,0 @@
-C:/Users/tapuc/CLionProjects/lab3sda/cmake-build-debug/CMakeFiles/lab3sda.dir
-C:/Users/tapuc/CLionProjects/lab3sda/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/tapuc/CLionProjects/lab3sda/cmake-build-debug/CMakeFiles/rebuild_cache.dir

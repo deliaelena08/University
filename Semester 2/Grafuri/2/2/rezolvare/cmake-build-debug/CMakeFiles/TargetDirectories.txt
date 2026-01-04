@@ -1,3 +1,0 @@
-C:/Users/maria/Desktop/Year 1/Semestru 2/Algoritmica Grafelor/Subiecte test Lab07/2/rezolvare/cmake-build-debug/CMakeFiles/rezolvare.dir
-C:/Users/maria/Desktop/Year 1/Semestru 2/Algoritmica Grafelor/Subiecte test Lab07/2/rezolvare/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/maria/Desktop/Year 1/Semestru 2/Algoritmica Grafelor/Subiecte test Lab07/2/rezolvare/cmake-build-debug/CMakeFiles/rebuild_cache.dir

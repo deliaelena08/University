@@ -1,7 +1,0 @@
-The Hills,The Weeknd,Pop,3
-Mouth to Flame,The Weeknd,Pop,3
-Baby,Justin Bieber,Pop,3
-Smells like Heaven,Nirvana,Rock,3
-m,o,Pop,2
-a,D,Rock,9
-melodie,artist,Jazz,4

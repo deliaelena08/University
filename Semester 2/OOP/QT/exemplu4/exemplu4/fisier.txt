@@ -1,6 +1,0 @@
-mercedes | g63 | 2018 | magenta
-mercedes | c class | 2016 | green
-audi | q5 | 2020 | grey
-bmw | x5 | 2019 | red
-bmw | x3 | 2017 | white
-opel | astra | 2007 | blue

@@ -1,3 +1,0 @@
-20:02,14:00,FP,normal
-04:02,13:00,FP,restanta
-04:02,09:00,Acasa,normal
