@@ -1,0 +1,11 @@
+torch
+transformers
+datasets
+scikit-learn
+pandas
+numpy
+matplotlib
+seaborn
+accelerate>=0.26.0
+kivy==2.3.0
+kivymd==1.2.0

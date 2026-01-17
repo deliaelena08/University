@@ -1,0 +1,11 @@
+nvcc main.cu `
+    convolution/InlineCudaConvolution.cu `
+    convolution/InlineSequentialConvolution.cpp `
+    utils/MatrixFileManager.cpp `
+    utils/MatrixValidator.cpp `
+    -o main.exe `
+    -allow-unsupported-compiler `
+    -Xcompiler /D_ALLOW_COMPILER_AND_STL_VERSION_MISMATCH `
+    -ccbin "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64"
+
+./main.exe

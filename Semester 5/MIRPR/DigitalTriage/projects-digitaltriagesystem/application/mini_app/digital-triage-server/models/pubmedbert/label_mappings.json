@@ -1,0 +1,14 @@
+{
+    "label2id": {
+        "Home": 0,
+        "Home With Service Facility": 1,
+        "Extended Care Facility": 2,
+        "Expired": 3
+    },
+    "id2label": {
+        "0": "Home",
+        "1": "Home With Service Facility",
+        "2": "Extended Care Facility",
+        "3": "Expired"
+    }
+}

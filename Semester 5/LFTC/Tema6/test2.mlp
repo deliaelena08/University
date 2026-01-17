@@ -1,0 +1,7 @@
+﻿main {
+    integer x, y, rez
+    read x
+    y <- 10
+    rez <- x * y - 5
+    write rez
+}

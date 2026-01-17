@@ -41,4 +41,4 @@ date.txt
 .vscode/
 bin/
 build/
-target/
+target/"Semester 5/PPD/CudaProject/inputs/input_10000_10000_3.txt" 

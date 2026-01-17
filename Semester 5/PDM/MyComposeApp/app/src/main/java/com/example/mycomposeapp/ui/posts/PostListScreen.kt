@@ -56,9 +56,9 @@ fun PostListScreen(
     val viewModel = remember { PostListViewModel(repository) }
     val context = LocalContext.current
     val lightSensor = remember { LightSensorMonitor(context) }
-    val luxValue by lightSensor.sensorValue.collectAsState(initial = 100f) // 100 default
+    val luxValue by lightSensor.sensorValue.collectAsState(initial = 40000f)
     val listState = rememberLazyListState()
-     val isDarkEnvironment = luxValue < 10f
+    val isDarkEnvironment = luxValue < 15000f
 
     LaunchedEffect(refreshTrigger) {
         if (refreshTrigger > 0) viewModel.loadPosts()
@@ -108,11 +108,12 @@ fun PostListScreen(
             }
         }
     ) { innerPadding ->
+        val backgroundColor = if (isDarkEnvironment) Color.DarkGray else MaterialTheme.colorScheme.background
         Column(
             modifier = Modifier
                 .padding(innerPadding)
                 .fillMaxSize()
-                .background(MaterialTheme.colorScheme.background)
+                .background(backgroundColor)
         ) {
             Surface(
                 modifier = Modifier.fillMaxWidth(),

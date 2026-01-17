@@ -1,0 +1,9 @@
+.venv/
+.idea/
+__pycache__/
+*.pyc
+dataset_split/
+Roberta_results/
+application/ai/models/bigdata_models/roberta-base/iteration3_tdelia_improvments/final_medical_model/
+**/.DS_Store
+stiube-denis/best_biobert_triage_model.pth
